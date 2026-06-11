@@ -8,7 +8,11 @@ export const Route = createFileRoute("/program-kerja")({
   head: () => ({
     meta: [
       { title: "Program Kerja — KKN PMD Gelora" },
-      { name: "description", content: "Tiga pilar utama: Infrastruktur Komposter Komunal, SI-Komp, dan Ekonomi Sirkular & Sedekah Hijau." },
+      {
+        name: "description",
+        content:
+          "Tiga pilar utama: Infrastruktur Komposter Komunal, SI-Komp, dan Ekonomi Sirkular & Sedekah Hijau.",
+      },
     ],
   }),
   component: ProgramKerja,

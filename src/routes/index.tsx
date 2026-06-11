@@ -6,7 +6,11 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Beranda — KKN PMD Gelora" },
-      { name: "description", content: "Kampanye Ekonomi Hijau Desa Gelora: dampak komposter komunal, edukasi, dan ekonomi sirkular." },
+      {
+        name: "description",
+        content:
+          "Kampanye Ekonomi Hijau Desa Gelora: dampak komposter komunal, edukasi, dan ekonomi sirkular.",
+      },
     ],
   }),
   component: Index,
@@ -52,7 +56,9 @@ function Index() {
               Ubah Sampah, <span className="text-primary">Menjadi Peluang</span> Bagi Desa.
             </h1>
             <p className="mt-5 text-base text-muted-foreground sm:text-lg">
-              Program KKN PMD Desa Gelora mengajak masyarakat mengolah sampah organik menjadi kompos bernilai guna, mendukung lingkungan yang lebih bersih sekaligus meningkatkan ekonomi desa secara berkelanjutan.
+              Program KKN PMD Desa Gelora mengajak masyarakat mengolah sampah organik menjadi kompos
+              bernilai guna, mendukung lingkungan yang lebih bersih sekaligus meningkatkan ekonomi
+              desa secara berkelanjutan.
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
               <Link

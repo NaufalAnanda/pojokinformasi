@@ -1,13 +1,25 @@
 import { createFileRoute } from "@tanstack/react-router";
 import {
-  Info, Trash2, Clock, Filter, Recycle, Video, Images, Download, QrCode,
+  Info,
+  Trash2,
+  Clock,
+  Filter,
+  Recycle,
+  Video,
+  Images,
+  Download,
+  QrCode,
 } from "lucide-react";
 
 export const Route = createFileRoute("/edukasi")({
   head: () => ({
     meta: [
       { title: "Pusat Edukasi — KKN PMD Gelora" },
-      { name: "description", content: "Portal edukasi pemilahan sampah dan panduan komposter — 8 modul interaktif, akses 24 jam." },
+      {
+        name: "description",
+        content:
+          "Portal edukasi pemilahan sampah dan panduan komposter — 8 modul interaktif, akses 24 jam.",
+      },
     ],
   }),
   component: Edukasi,
@@ -18,7 +30,11 @@ const grids = [
   { icon: Trash2, title: "Jenis-Jenis Sampah", desc: "Organik, Anorganik, dan B3." },
   { icon: Clock, title: "Waktu Penguraian Sampah", desc: "Infografis durasi terurainya sampah." },
   { icon: Filter, title: "Cara Pemilahan Sampah", desc: "Panduan praktis pemilahan di rumah." },
-  { icon: Recycle, title: "Cara Menggunakan Tong Komposter", desc: "Langkah pengoperasian komposter." },
+  {
+    icon: Recycle,
+    title: "Cara Menggunakan Tong Komposter",
+    desc: "Langkah pengoperasian komposter.",
+  },
   { icon: Video, title: "Video Edukasi", desc: "Tutorial visual untuk warga." },
   { icon: Images, title: "Dokumentasi Kegiatan", desc: "Galeri praktik lapangan." },
   { icon: Download, title: "Unduh Poster Edukasi", desc: "Materi siap cetak untuk dusun." },

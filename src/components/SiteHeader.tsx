@@ -30,7 +30,10 @@ export function SiteHeader() {
               key={item.to}
               to={item.to}
               className="rounded-full px-4 py-2 text-sm font-medium text-foreground/80 transition-colors hover:bg-leaf-soft hover:text-primary"
-              activeProps={{ className: "bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground" }}
+              activeProps={{
+                className:
+                  "bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground",
+              }}
               activeOptions={{ exact: item.to === "/" }}
             >
               {item.label}
@@ -74,7 +77,9 @@ export function SiteFooter() {
     <footer className="mt-20 border-t border-border bg-card/60">
       <div className="mx-auto max-w-6xl px-5 py-10 text-sm text-muted-foreground">
         <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-          <p className="font-medium text-foreground">KKN PMD Desa Gelora — Kampanye Ekonomi Hijau</p>
+          <p className="font-medium text-foreground">
+            KKN PMD Desa Gelora — Kampanye Ekonomi Hijau
+          </p>
           <p>© {new Date().getFullYear()} Tim KKN PMD. Semua hak dilindungi.</p>
         </div>
       </div>
