@@ -28,7 +28,7 @@ const menuItems = [
   {
     id: "ig",
     label: "Instagram",
-    sublabel: "@KKN DESA GELORA 2026",
+    sublabel: "@KKN DESA GELORA",
     icon: Instagram,
     href: "https://www.instagram.com/kkn_desagelora2026?igsh=YzhrbWIzc3o4MTNm",
     external: true,
@@ -38,7 +38,7 @@ const menuItems = [
   {
     id: "tt",
     label: "TikTok",
-    sublabel: "@KKN DESA GELORA 2026",
+    sublabel: "@KKN DESA GELORA",
     icon: Music2,
     href: "https://www.tiktok.com/@kkn.desa.gelora_p?is_from_webapp=1&sender_device=pc",
     external: true,
