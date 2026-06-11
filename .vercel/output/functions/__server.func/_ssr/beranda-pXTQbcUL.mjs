@@ -47,7 +47,7 @@ const shortcuts = [{
   desc: "Profil kelompok KKN PMD, sambutan, dan profil 7 dusun Desa Gelora.",
   icon: Calendar
 }];
-function Index() {
+function Beranda() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "relative overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mx-auto grid max-w-7xl gap-10 px-5 pt-10 pb-14 md:grid-cols-2 md:items-center md:pt-16 md:pb-20", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
@@ -111,5 +111,5 @@ function Index() {
   ] });
 }
 export {
-  Index as component
+  Beranda as component
 };

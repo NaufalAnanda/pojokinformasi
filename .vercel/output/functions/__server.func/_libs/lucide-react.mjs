@@ -75,12 +75,12 @@ const createLucideIcon = (iconName, iconNode) => {
   Component.displayName = toPascalCase(iconName);
   return Component;
 };
-const __iconNode$l = [
+const __iconNode$q = [
   ["path", { d: "M5 12h14", key: "1ays0h" }],
   ["path", { d: "m12 5 7 7-7 7", key: "xquz4c" }]
 ];
-const ArrowRight = createLucideIcon("arrow-right", __iconNode$l);
-const __iconNode$k = [
+const ArrowRight = createLucideIcon("arrow-right", __iconNode$q);
+const __iconNode$p = [
   ["path", { d: "M12 7v14", key: "1akyts" }],
   [
     "path",
@@ -90,8 +90,8 @@ const __iconNode$k = [
     }
   ]
 ];
-const BookOpen = createLucideIcon("book-open", __iconNode$k);
-const __iconNode$j = [
+const BookOpen = createLucideIcon("book-open", __iconNode$p);
+const __iconNode$o = [
   [
     "path",
     {
@@ -123,26 +123,37 @@ const __iconNode$j = [
   ["path", { d: "m12 8 4.74-2.85", key: "3rx089" }],
   ["path", { d: "M12 13.5V8", key: "1io7kd" }]
 ];
-const Boxes = createLucideIcon("boxes", __iconNode$j);
-const __iconNode$i = [
+const Boxes = createLucideIcon("boxes", __iconNode$o);
+const __iconNode$n = [
+  ["path", { d: "M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16", key: "jecpp" }],
+  ["rect", { width: "20", height: "14", x: "2", y: "6", rx: "2", key: "i6l2r4" }]
+];
+const Briefcase = createLucideIcon("briefcase", __iconNode$n);
+const __iconNode$m = [
   ["path", { d: "M8 2v4", key: "1cmpym" }],
   ["path", { d: "M16 2v4", key: "4m81vk" }],
   ["rect", { width: "18", height: "18", x: "3", y: "4", rx: "2", key: "1hopcy" }],
   ["path", { d: "M3 10h18", key: "8toen8" }]
 ];
-const Calendar = createLucideIcon("calendar", __iconNode$i);
-const __iconNode$h = [
+const Calendar = createLucideIcon("calendar", __iconNode$m);
+const __iconNode$l = [
   ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
   ["path", { d: "M12 6v6l4 2", key: "mmk7yg" }]
 ];
-const Clock = createLucideIcon("clock", __iconNode$h);
-const __iconNode$g = [
+const Clock = createLucideIcon("clock", __iconNode$l);
+const __iconNode$k = [
   ["path", { d: "M12 15V3", key: "m9g1x1" }],
   ["path", { d: "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4", key: "ih7n3h" }],
   ["path", { d: "m7 10 5 5 5-5", key: "brsn70" }]
 ];
-const Download = createLucideIcon("download", __iconNode$g);
-const __iconNode$f = [
+const Download = createLucideIcon("download", __iconNode$k);
+const __iconNode$j = [
+  ["path", { d: "M15 3h6v6", key: "1q9fwt" }],
+  ["path", { d: "M10 14 21 3", key: "gplh6r" }],
+  ["path", { d: "M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6", key: "a6xqqp" }]
+];
+const ExternalLink = createLucideIcon("external-link", __iconNode$j);
+const __iconNode$i = [
   [
     "path",
     {
@@ -151,27 +162,38 @@ const __iconNode$f = [
     }
   ]
 ];
-const Funnel = createLucideIcon("funnel", __iconNode$f);
-const __iconNode$e = [
+const Funnel = createLucideIcon("funnel", __iconNode$i);
+const __iconNode$h = [
+  ["path", { d: "M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8", key: "5wwlr5" }],
+  [
+    "path",
+    {
+      d: "M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z",
+      key: "r6nss1"
+    }
+  ]
+];
+const House = createLucideIcon("house", __iconNode$h);
+const __iconNode$g = [
   ["path", { d: "m22 11-1.296-1.296a2.4 2.4 0 0 0-3.408 0L11 16", key: "9kzy35" }],
   ["path", { d: "M4 8a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2", key: "1t0f0t" }],
   ["circle", { cx: "13", cy: "7", r: "1", fill: "currentColor", key: "1obus6" }],
   ["rect", { x: "8", y: "2", width: "14", height: "14", rx: "2", key: "1gvhby" }]
 ];
-const Images = createLucideIcon("images", __iconNode$e);
-const __iconNode$d = [
+const Images = createLucideIcon("images", __iconNode$g);
+const __iconNode$f = [
   ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
   ["path", { d: "M12 16v-4", key: "1dtifu" }],
   ["path", { d: "M12 8h.01", key: "e9boi3" }]
 ];
-const Info = createLucideIcon("info", __iconNode$d);
-const __iconNode$c = [
+const Info = createLucideIcon("info", __iconNode$f);
+const __iconNode$e = [
   ["rect", { width: "20", height: "20", x: "2", y: "2", rx: "5", ry: "5", key: "2e1cvw" }],
   ["path", { d: "M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z", key: "9exkf1" }],
   ["line", { x1: "17.5", x2: "17.51", y1: "6.5", y2: "6.5", key: "r4j83e" }]
 ];
-const Instagram = createLucideIcon("instagram", __iconNode$c);
-const __iconNode$b = [
+const Instagram = createLucideIcon("instagram", __iconNode$e);
+const __iconNode$d = [
   [
     "path",
     {
@@ -181,8 +203,8 @@ const __iconNode$b = [
   ],
   ["path", { d: "M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12", key: "mt58a7" }]
 ];
-const Leaf = createLucideIcon("leaf", __iconNode$b);
-const __iconNode$a = [
+const Leaf = createLucideIcon("leaf", __iconNode$d);
+const __iconNode$c = [
   [
     "path",
     {
@@ -192,13 +214,28 @@ const __iconNode$a = [
   ],
   ["circle", { cx: "12", cy: "10", r: "3", key: "ilqhr7" }]
 ];
-const MapPin = createLucideIcon("map-pin", __iconNode$a);
-const __iconNode$9 = [
+const MapPin = createLucideIcon("map-pin", __iconNode$c);
+const __iconNode$b = [
   ["path", { d: "M4 5h16", key: "1tepv9" }],
   ["path", { d: "M4 12h16", key: "1lakjw" }],
   ["path", { d: "M4 19h16", key: "1djgab" }]
 ];
-const Menu = createLucideIcon("menu", __iconNode$9);
+const Menu = createLucideIcon("menu", __iconNode$b);
+const __iconNode$a = [
+  [
+    "path",
+    {
+      d: "M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719",
+      key: "1sd12s"
+    }
+  ]
+];
+const MessageCircle = createLucideIcon("message-circle", __iconNode$a);
+const __iconNode$9 = [
+  ["circle", { cx: "8", cy: "18", r: "4", key: "1fc0mg" }],
+  ["path", { d: "M12 18V2l7 4", key: "g04rme" }]
+];
+const Music2 = createLucideIcon("music-2", __iconNode$9);
 const __iconNode$8 = [
   [
     "path",
@@ -316,7 +353,9 @@ export {
   Boxes as B,
   Clock as C,
   Download as D,
+  ExternalLink as E,
   Funnel as F,
+  House as H,
   Instagram as I,
   Leaf as L,
   Menu as M,
@@ -333,5 +372,8 @@ export {
   Info as c,
   Images as d,
   BookOpen as e,
-  Calendar as f
+  Calendar as f,
+  MessageCircle as g,
+  Music2 as h,
+  Briefcase as i
 };

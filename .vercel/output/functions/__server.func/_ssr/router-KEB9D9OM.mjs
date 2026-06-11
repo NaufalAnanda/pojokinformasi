@@ -1,8 +1,8 @@
 import { Q as QueryClient } from "../_libs/tanstack__query-core.mjs";
 import { Q as QueryClientProvider } from "../_libs/tanstack__react-query.mjs";
-import { c as createRouter, a as createRootRouteWithContext, u as useRouter, L as Link, O as Outlet, H as HeadContent, S as Scripts, b as createFileRoute, l as lazyRouteComponent } from "../_libs/tanstack__react-router.mjs";
+import { c as createRouter, a as createRootRouteWithContext, u as useRouter, L as Link, b as useRouterState, O as Outlet, H as HeadContent, S as Scripts, d as createFileRoute, l as lazyRouteComponent } from "../_libs/tanstack__react-router.mjs";
 import { r as reactExports, j as jsxRuntimeExports } from "../_libs/react.mjs";
-import { L as Leaf, X, M as Menu } from "../_libs/lucide-react.mjs";
+import { L as Leaf, H as House, X, M as Menu } from "../_libs/lucide-react.mjs";
 import "../_libs/tanstack__router-core.mjs";
 import "../_libs/tanstack__history.mjs";
 import "../_libs/cookie-es.mjs";
@@ -16,7 +16,7 @@ import "crypto";
 import "async_hooks";
 import "stream";
 import "../_libs/isbot.mjs";
-const appCss = "/assets/styles-B13J2xOS.css";
+const appCss = "/assets/styles-C71uEhIZ.css";
 function reportLovableError(error, context = {}) {
   if (typeof window === "undefined") return;
   window.__lovableEvents?.captureException?.(
@@ -34,32 +34,36 @@ function reportLovableError(error, context = {}) {
   );
 }
 const navItems = [
-  { to: "/", label: "Beranda" },
-  { to: "/program-kerja", label: "Program Kerja" },
-  { to: "/edukasi", label: "Pusat Edukasi" },
-  { to: "/tentang-kami", label: "Tentang Kami" }
+  { to: "/", label: "Home", icon: House, exact: true },
+  { to: "/beranda", label: "Beranda", exact: false },
+  { to: "/program-kerja", label: "Program Kerja", exact: false },
+  { to: "/edukasi", label: "Pusat Edukasi", exact: false },
+  { to: "/tentang-kami", label: "Tentang Kami", exact: false }
 ];
 function SiteHeader() {
   const [open, setOpen] = reactExports.useState(false);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("header", { className: "sticky top-0 z-40 border-b border-border/60 bg-background/85 backdrop-blur-md", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mx-auto flex max-w-6xl items-center justify-between px-5 py-3.5", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mx-auto flex max-w-7xl items-center justify-between px-5 py-3.5", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs(Link, { to: "/", className: "flex items-center gap-2.5 font-bold text-foreground", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-primary text-primary-foreground shadow-sm", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Leaf, { className: "h-5 w-5" }) }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "flex flex-col leading-tight", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-base", children: "KKN PMD Gelora" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[11px] font-medium text-muted-foreground", children: "Ekonomi Hijau" })
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-base", children: "KKN PMD Desa Gelora" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[11px] font-medium text-muted-foreground", children: "2026" })
         ] })
       ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("nav", { className: "hidden items-center gap-1 md:flex", children: navItems.map((item) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+      /* @__PURE__ */ jsxRuntimeExports.jsx("nav", { className: "hidden items-center gap-1 md:flex", children: navItems.map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
         Link,
         {
           to: item.to,
-          className: "rounded-full px-4 py-2 text-sm font-medium text-foreground/80 transition-colors hover:bg-leaf-soft hover:text-primary",
+          className: "flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-medium text-foreground/80 transition-colors hover:bg-leaf-soft hover:text-primary",
           activeProps: {
             className: "bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground"
           },
-          activeOptions: { exact: item.to === "/" },
-          children: item.label
+          activeOptions: { exact: item.exact },
+          children: [
+            "icon" in item && item.icon && /* @__PURE__ */ jsxRuntimeExports.jsx(item.icon, { className: "h-3.5 w-3.5" }),
+            item.label
+          ]
         },
         item.to
       )) }),
@@ -73,15 +77,18 @@ function SiteHeader() {
         }
       )
     ] }),
-    open && /* @__PURE__ */ jsxRuntimeExports.jsx("nav", { className: "border-t border-border bg-background px-5 py-3 md:hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-col gap-1", children: navItems.map((item) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+    open && /* @__PURE__ */ jsxRuntimeExports.jsx("nav", { className: "border-t border-border bg-background px-5 py-3 md:hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-col gap-1", children: navItems.map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
       Link,
       {
         to: item.to,
         onClick: () => setOpen(false),
-        className: "rounded-2xl px-4 py-3 text-sm font-medium text-foreground/80 hover:bg-leaf-soft",
+        className: "flex items-center gap-2 rounded-2xl px-4 py-3 text-sm font-medium text-foreground/80 hover:bg-leaf-soft",
         activeProps: { className: "bg-primary text-primary-foreground" },
-        activeOptions: { exact: item.to === "/" },
-        children: item.label
+        activeOptions: { exact: item.exact },
+        children: [
+          "icon" in item && item.icon && /* @__PURE__ */ jsxRuntimeExports.jsx(item.icon, { className: "h-4 w-4" }),
+          item.label
+        ]
       },
       item.to
     )) }) })
@@ -89,7 +96,7 @@ function SiteHeader() {
 }
 function SiteFooter() {
   return /* @__PURE__ */ jsxRuntimeExports.jsx("footer", { className: "mt-20 border-t border-border bg-card/60", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mx-auto max-w-6xl px-5 py-10 text-sm text-muted-foreground", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-medium text-foreground", children: "KKN PMD Desa Gelora — Kampanye Ekonomi Hijau" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-medium text-foreground", children: "KKN PMD Desa Gelora 2026 — Kampanye Ekonomi Hijau" }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { children: [
       "© ",
       (/* @__PURE__ */ new Date()).getFullYear(),
@@ -144,17 +151,17 @@ function ErrorComponent({ error, reset }) {
     ] })
   ] }) });
 }
-const Route$4 = createRootRouteWithContext()({
+const Route$5 = createRootRouteWithContext()({
   head: () => ({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "KKN PMD Gelora — Ekonomi Hijau" },
+      { title: "KKN PMD Desa Gelora 2026" },
       {
         name: "description",
-        content: "Kampanye Ekonomi Hijau Desa Gelora: komposter komunal, edukasi, dan ekonomi sirkular."
+        content: "KKN PMD Desa Gelora 2026 — Kampanye Ekonomi Hijau: komposter komunal, edukasi, dan ekonomi sirkular."
       },
-      { property: "og:title", content: "KKN PMD Gelora — Ekonomi Hijau" },
+      { property: "og:title", content: "KKN PMD Desa Gelora 2026" },
       {
         property: "og:description",
         content: "Komposter komunal, edukasi pemilahan sampah, dan ekonomi sirkular Desa Gelora."
@@ -178,7 +185,7 @@ const Route$4 = createRootRouteWithContext()({
   errorComponent: ErrorComponent
 });
 function RootShell({ children }) {
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("html", { lang: "en", children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("html", { lang: "id", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("head", { children: /* @__PURE__ */ jsxRuntimeExports.jsx(HeadContent, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("body", { children: [
       children,
@@ -187,15 +194,17 @@ function RootShell({ children }) {
   ] });
 }
 function RootComponent() {
-  const { queryClient } = Route$4.useRouteContext();
+  const { queryClient } = Route$5.useRouteContext();
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const isSplash = pathname === "/";
   return /* @__PURE__ */ jsxRuntimeExports.jsx(QueryClientProvider, { client: queryClient, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex min-h-screen flex-col", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(SiteHeader, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx("main", { className: "flex-1", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Outlet, {}) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(SiteFooter, {})
+    !isSplash && /* @__PURE__ */ jsxRuntimeExports.jsx(SiteFooter, {})
   ] }) });
 }
-const $$splitComponentImporter$3 = () => import("./tentang-kami-LHJHQCGC.mjs");
-const Route$3 = createFileRoute("/tentang-kami")({
+const $$splitComponentImporter$4 = () => import("./tentang-kami-LHJHQCGC.mjs");
+const Route$4 = createFileRoute("/tentang-kami")({
   head: () => ({
     meta: [{
       title: "Tentang Kami — KKN PMD Gelora"
@@ -204,10 +213,10 @@ const Route$3 = createFileRoute("/tentang-kami")({
       content: "Profil kelompok KKN PMD Desa Gelora, sambutan Kepala Desa & DPL, dan profil 7 dusun."
     }]
   }),
-  component: lazyRouteComponent($$splitComponentImporter$3, "component")
+  component: lazyRouteComponent($$splitComponentImporter$4, "component")
 });
-const $$splitComponentImporter$2 = () => import("./program-kerja-DNgaskwt.mjs");
-const Route$2 = createFileRoute("/program-kerja")({
+const $$splitComponentImporter$3 = () => import("./program-kerja-DNgaskwt.mjs");
+const Route$3 = createFileRoute("/program-kerja")({
   head: () => ({
     meta: [{
       title: "Program Kerja — KKN PMD Gelora"
@@ -216,10 +225,10 @@ const Route$2 = createFileRoute("/program-kerja")({
       content: "Tiga pilar utama: Infrastruktur Komposter Komunal, SI-Komp, dan Ekonomi Sirkular & Sedekah Hijau."
     }]
   }),
-  component: lazyRouteComponent($$splitComponentImporter$2, "component")
+  component: lazyRouteComponent($$splitComponentImporter$3, "component")
 });
-const $$splitComponentImporter$1 = () => import("./edukasi-BhazzKoV.mjs");
-const Route$1 = createFileRoute("/edukasi")({
+const $$splitComponentImporter$2 = () => import("./edukasi-BhazzKoV.mjs");
+const Route$2 = createFileRoute("/edukasi")({
   head: () => ({
     meta: [{
       title: "Pusat Edukasi — KKN PMD Gelora"
@@ -228,47 +237,65 @@ const Route$1 = createFileRoute("/edukasi")({
       content: "Portal edukasi pemilahan sampah dan panduan komposter — 8 modul interaktif, akses 24 jam."
     }]
   }),
-  component: lazyRouteComponent($$splitComponentImporter$1, "component")
+  component: lazyRouteComponent($$splitComponentImporter$2, "component")
 });
-const $$splitComponentImporter = () => import("./index-CxyGs6xP.mjs");
-const Route = createFileRoute("/")({
+const $$splitComponentImporter$1 = () => import("./beranda-pXTQbcUL.mjs");
+const Route$1 = createFileRoute("/beranda")({
   head: () => ({
     meta: [{
-      title: "Beranda — KKN PMD Gelora"
+      title: "Beranda — KKN PMD Desa Gelora 2026"
     }, {
       name: "description",
       content: "Kampanye Ekonomi Hijau Desa Gelora: dampak komposter komunal, edukasi, dan ekonomi sirkular."
     }]
   }),
+  component: lazyRouteComponent($$splitComponentImporter$1, "component")
+});
+const $$splitComponentImporter = () => import("./index-W3UkkFyk.mjs");
+const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [{
+      title: "KKN PMD Desa Gelora 2026"
+    }, {
+      name: "description",
+      content: "KKN PMD Desa Gelora 2026 — Kontak dan Program Kerja."
+    }]
+  }),
   component: lazyRouteComponent($$splitComponentImporter, "component")
 });
-const TentangKamiRoute = Route$3.update({
+const TentangKamiRoute = Route$4.update({
   id: "/tentang-kami",
   path: "/tentang-kami",
-  getParentRoute: () => Route$4
+  getParentRoute: () => Route$5
 });
-const ProgramKerjaRoute = Route$2.update({
+const ProgramKerjaRoute = Route$3.update({
   id: "/program-kerja",
   path: "/program-kerja",
-  getParentRoute: () => Route$4
+  getParentRoute: () => Route$5
 });
-const EdukasiRoute = Route$1.update({
+const EdukasiRoute = Route$2.update({
   id: "/edukasi",
   path: "/edukasi",
-  getParentRoute: () => Route$4
+  getParentRoute: () => Route$5
+});
+const BerandaRoute = Route$1.update({
+  id: "/beranda",
+  path: "/beranda",
+  getParentRoute: () => Route$5
 });
 const IndexRoute = Route.update({
   id: "/",
   path: "/",
-  getParentRoute: () => Route$4
+  getParentRoute: () => Route$5
 });
 const rootRouteChildren = {
   IndexRoute,
+  BerandaRoute,
   EdukasiRoute,
   ProgramKerjaRoute,
   TentangKamiRoute
 };
-const routeTree = Route$4._addFileChildren(rootRouteChildren)._addFileTypes();
+const routeTree = Route$5._addFileChildren(rootRouteChildren)._addFileTypes();
 const getRouter = () => {
   const queryClient = new QueryClient();
   const router = createRouter({
