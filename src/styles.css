@@ -1,0 +1,123 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-earth: var(--earth);
+  --color-earth-foreground: var(--earth-foreground);
+  --color-leaf: var(--leaf);
+  --color-leaf-soft: var(--leaf-soft);
+  --font-sans: "Poppins", "Inter", system-ui, sans-serif;
+  --font-display: "Poppins", system-ui, sans-serif;
+}
+
+:root {
+  --radius: 1rem;
+  /* Soft Beige background */
+  --background: oklch(0.975 0.018 90);
+  --foreground: oklch(0.22 0.03 145);
+
+  --card: oklch(0.99 0.012 95);
+  --card-foreground: oklch(0.22 0.03 145);
+  --popover: oklch(0.99 0.012 95);
+  --popover-foreground: oklch(0.22 0.03 145);
+
+  /* Forest / Leaf Green */
+  --primary: oklch(0.48 0.13 145);
+  --primary-foreground: oklch(0.98 0.01 90);
+
+  /* Earthy Brown */
+  --secondary: oklch(0.55 0.08 60);
+  --secondary-foreground: oklch(0.98 0.01 90);
+
+  --muted: oklch(0.93 0.02 90);
+  --muted-foreground: oklch(0.45 0.03 100);
+
+  --accent: oklch(0.85 0.09 130);
+  --accent-foreground: oklch(0.22 0.03 145);
+
+  --destructive: oklch(0.55 0.2 27);
+  --destructive-foreground: oklch(0.98 0.01 90);
+
+  --border: oklch(0.88 0.025 90);
+  --input: oklch(0.9 0.02 90);
+  --ring: oklch(0.48 0.13 145);
+
+  --earth: oklch(0.45 0.07 55);
+  --earth-foreground: oklch(0.98 0.01 90);
+  --leaf: oklch(0.48 0.13 145);
+  --leaf-soft: oklch(0.92 0.05 140);
+}
+
+.dark {
+  --background: oklch(0.18 0.02 140);
+  --foreground: oklch(0.96 0.01 90);
+  --card: oklch(0.22 0.025 140);
+  --card-foreground: oklch(0.96 0.01 90);
+  --popover: oklch(0.22 0.025 140);
+  --popover-foreground: oklch(0.96 0.01 90);
+  --primary: oklch(0.7 0.14 145);
+  --primary-foreground: oklch(0.15 0.02 145);
+  --secondary: oklch(0.55 0.08 60);
+  --secondary-foreground: oklch(0.98 0.01 90);
+  --muted: oklch(0.27 0.025 140);
+  --muted-foreground: oklch(0.7 0.02 100);
+  --accent: oklch(0.35 0.08 140);
+  --accent-foreground: oklch(0.96 0.01 90);
+  --destructive: oklch(0.65 0.2 27);
+  --destructive-foreground: oklch(0.98 0.01 90);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.7 0.14 145);
+  --earth: oklch(0.55 0.08 60);
+  --earth-foreground: oklch(0.98 0.01 90);
+  --leaf: oklch(0.7 0.14 145);
+  --leaf-soft: oklch(0.3 0.06 140);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-size: 16.5px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+}
