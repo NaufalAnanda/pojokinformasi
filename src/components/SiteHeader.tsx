@@ -14,7 +14,7 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/85 backdrop-blur-md">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3.5">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3.5">
         <Link to="/" className="flex items-center gap-2.5 font-bold text-foreground">
           <span className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-primary text-primary-foreground shadow-sm">
             <Leaf className="h-5 w-5" />
