@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { MessageCircle, Instagram, Music2, Briefcase, Leaf, ExternalLink } from "lucide-react";
+import logo from "@/assets/logo.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -61,10 +62,14 @@ function Splash() {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-background px-5 py-12">
       {/* Logo + Judul */}
+      {/* Logo + Judul */}
       <div className="mb-10 flex flex-col items-center gap-4 text-center">
-        <span className="grid h-20 w-20 place-items-center rounded-3xl bg-primary shadow-lg">
-          <Leaf className="h-10 w-10 text-primary-foreground" />
-        </span>
+        {/* Menggunakan gambar logo yang sudah di-import */}
+        <img
+          src={logo}
+          alt="Logo KKN PMD Desa Gelora"
+          className="h-24 w-24 rounded-full object-cover shadow-[0_0_15px_rgba(0,0,0,0.4)]"
+        />
         <div>
           <h1 className="text-2xl font-extrabold tracking-tight text-foreground sm:text-3xl">
             KKN PMD Desa Gelora

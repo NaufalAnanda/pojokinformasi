@@ -1,5 +1,22 @@
 import { j as jsxRuntimeExports } from "../_libs/react.mjs";
-import { L as Leaf, g as MessageCircle, I as Instagram, h as Music2, i as Briefcase, E as ExternalLink } from "../_libs/lucide-react.mjs";
+import { l as logo } from "./router-HQytWwR4.mjs";
+import { g as MessageCircle, I as Instagram, h as Music2, i as Briefcase, E as ExternalLink } from "../_libs/lucide-react.mjs";
+import "../_libs/tanstack__query-core.mjs";
+import "../_libs/tanstack__react-query.mjs";
+import "../_libs/tanstack__react-router.mjs";
+import "../_libs/tanstack__router-core.mjs";
+import "../_libs/tanstack__history.mjs";
+import "../_libs/cookie-es.mjs";
+import "../_libs/seroval.mjs";
+import "../_libs/seroval-plugins.mjs";
+import "node:stream/web";
+import "node:stream";
+import "../_libs/react-dom.mjs";
+import "util";
+import "crypto";
+import "async_hooks";
+import "stream";
+import "../_libs/isbot.mjs";
 const menuItems = [{
   id: "wa",
   label: "WhatsApp",
@@ -40,7 +57,7 @@ const menuItems = [{
 function Splash() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex min-h-screen flex-col items-center justify-center bg-background px-5 py-12", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-10 flex flex-col items-center gap-4 text-center", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "grid h-20 w-20 place-items-center rounded-3xl bg-primary shadow-lg", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Leaf, { className: "h-10 w-10 text-primary-foreground" }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: logo, alt: "Logo KKN PMD Desa Gelora", className: "h-24 w-24 rounded-full object-cover shadow-[0_0_15px_rgba(0,0,0,0.4)]" }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-2xl font-extrabold tracking-tight text-foreground sm:text-3xl", children: "KKN PMD Desa Gelora" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-1 text-sm font-semibold text-primary", children: "2026" }),

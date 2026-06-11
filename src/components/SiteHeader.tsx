@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Leaf, Menu, X, Home } from "lucide-react";
 import { useState } from "react";
+import logo from "@/assets/logo.jpg";
 
 const navItems = [
   { to: "/", label: "Home", icon: Home, exact: true },
@@ -16,9 +17,12 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/85 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3.5">
         <Link to="/" className="flex items-center gap-2.5 font-bold text-foreground">
-          <span className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-primary text-primary-foreground shadow-sm">
-            <Leaf className="h-5 w-5" />
-          </span>
+          <img
+            src={logo}
+            alt="Logo KKN"
+            // Menggunakan ukuran h-10 w-10 agar proporsional di header
+            className="h-10 w-10 shrink-0 rounded-full object-cover shadow-[0_0_10px_rgba(0,0,0,0.4)]"
+          />
           <span className="flex flex-col leading-tight">
             <span className="text-base">KKN PMD Desa Gelora</span>
             <span className="text-[11px] font-medium text-muted-foreground">2026</span>
