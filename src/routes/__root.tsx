@@ -4,6 +4,7 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
+  useRouterState,
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
@@ -77,13 +78,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "KKN PMD Gelora — Ekonomi Hijau" },
+      { title: "KKN PMD Desa Gelora 2026" },
       {
         name: "description",
         content:
-          "Kampanye Ekonomi Hijau Desa Gelora: komposter komunal, edukasi, dan ekonomi sirkular.",
+          "KKN PMD Desa Gelora 2026 — Kampanye Ekonomi Hijau: komposter komunal, edukasi, dan ekonomi sirkular.",
       },
-      { property: "og:title", content: "KKN PMD Gelora — Ekonomi Hijau" },
+      { property: "og:title", content: "KKN PMD Desa Gelora 2026" },
       {
         property: "og:description",
         content: "Komposter komunal, edukasi pemilahan sampah, dan ekonomi sirkular Desa Gelora.",
@@ -109,7 +110,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="id">
       <head>
         <HeadContent />
       </head>
@@ -125,6 +126,8 @@ import { SiteHeader, SiteFooter } from "../components/SiteHeader";
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const isSplash = pathname === "/";
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -133,7 +136,7 @@ function RootComponent() {
         <main className="flex-1">
           <Outlet />
         </main>
-        <SiteFooter />
+        {!isSplash && <SiteFooter />}
       </div>
     </QueryClientProvider>
   );
