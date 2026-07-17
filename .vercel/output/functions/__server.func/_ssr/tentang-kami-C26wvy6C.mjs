@@ -313,7 +313,7 @@ const divisi2 = [{
   role: "Divisi Perlengkapan",
   photo: heroImgPerkap1
 }, {
-  name: "-",
+  name: "Naufal Pramudya Ananda",
   role: "Divisi Perlengkapan",
   photo: heroImgPerkap2
 }];

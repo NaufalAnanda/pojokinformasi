@@ -275,7 +275,7 @@ function RootComponent() {
     /* @__PURE__ */ jsxRuntimeExports.jsx(Footer, {})
   ] }) });
 }
-const $$splitComponentImporter$5 = () => import("./tentang-kami-CeI4zFI5.mjs");
+const $$splitComponentImporter$5 = () => import("./tentang-kami-C26wvy6C.mjs");
 const Route$5 = createFileRoute("/tentang-kami")({
   head: () => ({
     meta: [{
@@ -320,7 +320,7 @@ const Route$2 = createFileRoute("/beranda")({
   }),
   component: lazyRouteComponent($$splitComponentImporter$2, "component")
 });
-const $$splitComponentImporter$1 = () => import("./index-Y32svVsN.mjs");
+const $$splitComponentImporter$1 = () => import("./index-DswJxmcJ.mjs");
 const Route$1 = createFileRoute("/")({
   head: () => ({
     meta: [{
