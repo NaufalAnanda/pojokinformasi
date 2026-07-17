@@ -781,7 +781,7 @@ function RouterProvider({ router, ...rest }) {
   });
 }
 function useRouterState(opts) {
-  const contextRouter = useRouter({ warn: opts?.router === void 0 });
+  const contextRouter = useRouter();
   const router = opts?.router || contextRouter;
   {
     const state = router.stores.__store.get();
