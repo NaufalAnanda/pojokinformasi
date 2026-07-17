@@ -44,7 +44,7 @@ const divisi2 = [
   { name: "-", role: "Divisi PDD", photo: heroImgPDD1 },
   { name: "-", role: "Divisi PDD", photo: heroImgPDD2 },
   { name: "-", role: "Divisi Perlengkapan", photo: heroImgPerkap1 },
-  { name: "-", role: "Divisi Perlengkapan", photo: heroImgPerkap2 },
+  { name: "Naufal Pramudya Ananda", role: "Divisi Perlengkapan", photo: heroImgPerkap2 },
 ];
 
 const dusun = [
