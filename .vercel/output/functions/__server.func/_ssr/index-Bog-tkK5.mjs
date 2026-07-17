@@ -1,5 +1,5 @@
 import { j as jsxRuntimeExports } from "../_libs/react.mjs";
-import { l as logo } from "./router-g3bLmYPy.mjs";
+import { l as logo } from "./router-uZoqRZVe.mjs";
 import { B as Briefcase, f as MessageCircle, I as Instagram, g as Music2, E as ExternalLink } from "../_libs/lucide-react.mjs";
 import "../_libs/tanstack__query-core.mjs";
 import "../_libs/tanstack__react-query.mjs";

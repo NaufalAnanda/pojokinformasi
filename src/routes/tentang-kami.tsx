@@ -28,22 +28,22 @@ export const Route = createFileRoute("/tentang-kami")({
 });
 
 const pengurus = [
-  { name: "-", role: "DPK", photo: heroImgDpk },
+  { name: "Dr. dr. Metta Octora, M.Kes", role: "DPK", photo: heroImgDpk },
   { name: "Rizky Agung Kurniawan", role: "Ketua Kelompok", photo: heroImgKetua },
-  { name: "-", role: "Sekretaris", photo: heroImgSekre },
+  { name: "Nurul Hidayah", role: "Sekretaris", photo: heroImgSekre },
 ];
 
 const divisi1 = [
-  { name: "-", role: "Bendahara", photo: heroImgBendahara },
-  { name: "-", role: "Divisi Humas", photo: heroImgHumas },
-  { name: "-", role: "Divisi Acara", photo: heroImgAcara1 },
-  { name: "-", role: "Divisi Acara", photo: heroImgAcara2 },
+  { name: "Sisna Fatmasari", role: "Bendahara", photo: heroImgBendahara },
+  { name: "I Desak Kadek Dwi Sastrariani", role: "Divisi Humas", photo: heroImgHumas },
+  { name: "Kayla Aisha Nugroho", role: "Divisi Acara", photo: heroImgAcara1 },
+  { name: "Muhammada Rizqy Sya'bany", role: "Divisi Acara", photo: heroImgAcara2 },
 ];
 
 const divisi2 = [
-  { name: "-", role: "Divisi PDD", photo: heroImgPDD1 },
-  { name: "-", role: "Divisi PDD", photo: heroImgPDD2 },
-  { name: "-", role: "Divisi Perlengkapan", photo: heroImgPerkap1 },
+  { name: "Wilda Ayu Khairi Jumaini", role: "Divisi PDD", photo: heroImgPDD1 },
+  { name: "Andi Deffi Nadiya Izzatillaeli", role: "Divisi PDD", photo: heroImgPDD2 },
+  { name: "Muh. Ahsanur Rido", role: "Divisi Perlengkapan", photo: heroImgPerkap1 },
   { name: "Naufal Pramudya Ananda", role: "Divisi Perlengkapan", photo: heroImgPerkap2 },
 ];
 

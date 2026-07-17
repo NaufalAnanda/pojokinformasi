@@ -271,7 +271,7 @@ const heroImgPerkap1 = "/assets/ahsan-D0S74J9c.jpg";
 const heroImgPerkap2 = "/assets/naufall-KGGKGLUk.jpg";
 const heroImgDpk = "/assets/budpk-Bp5092be.jpg";
 const pengurus = [{
-  name: "-",
+  name: "Dr. dr. Metta Octora, M.Kes",
   role: "DPK",
   photo: heroImgDpk
 }, {
@@ -279,37 +279,37 @@ const pengurus = [{
   role: "Ketua Kelompok",
   photo: heroImgKetua
 }, {
-  name: "-",
+  name: "Nurul Hidayah",
   role: "Sekretaris",
   photo: heroImgSekre
 }];
 const divisi1 = [{
-  name: "-",
+  name: "Sisna Fatmasari",
   role: "Bendahara",
   photo: heroImgBendahara
 }, {
-  name: "-",
+  name: "I Desak Kadek Dwi Sastrariani",
   role: "Divisi Humas",
   photo: heroImgHumas
 }, {
-  name: "-",
+  name: "Kayla Aisha Nugroho",
   role: "Divisi Acara",
   photo: heroImgAcara1
 }, {
-  name: "-",
+  name: "Muhammada Rizqy Sya'bany",
   role: "Divisi Acara",
   photo: heroImgAcara2
 }];
 const divisi2 = [{
-  name: "-",
+  name: "Wilda Ayu Khairi Jumaini",
   role: "Divisi PDD",
   photo: heroImgPDD1
 }, {
-  name: "-",
+  name: "Andi Deffi Nadiya Izzatillaeli",
   role: "Divisi PDD",
   photo: heroImgPDD2
 }, {
-  name: "-",
+  name: "Muh. Ahsanur Rido",
   role: "Divisi Perlengkapan",
   photo: heroImgPerkap1
 }, {
