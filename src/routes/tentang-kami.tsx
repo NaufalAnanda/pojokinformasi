@@ -1,5 +1,17 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Quote, MapPin, Users, Phone, Instagram } from "lucide-react";
+import { Quote, MapPin, Users } from "lucide-react";
+import { MapDesa } from "@/components/MapDesa";
+import heroImgKetua from "@/assets/ketua.jpg";
+import heroImgSekre from "@/assets/nurul.jpg";
+import heroImgBendahara from "@/assets/sisna.jpg";
+import heroImgHumas from "@/assets/ecak.jpg";
+import heroImgAcara1 from "@/assets/kayla.jpg";
+import heroImgAcara2 from "@/assets/aris.jpg";
+import heroImgPDD1 from "@/assets/wilda.jpg";
+import heroImgPDD2 from "@/assets/leli.jpg";
+import heroImgPerkap1 from "@/assets/ahsan.jpg";
+import heroImgPerkap2 from "@/assets/naufall.jpg";
+import heroImgDpk from "@/assets/budpk.jpg";
 
 export const Route = createFileRoute("/tentang-kami")({
   head: () => ({
@@ -16,26 +28,33 @@ export const Route = createFileRoute("/tentang-kami")({
 });
 
 const pengurus = [
-  { name: "-", role: "Ketua Kelompok" },
-  { name: "-", role: "Sekretaris" },
-  { name: "-", role: "Bendahara" },
+  { name: "-", role: "DPK", photo: heroImgDpk },
+  { name: "Rizky Agung Kurniawan", role: "Ketua Kelompok", photo: heroImgKetua },
+  { name: "-", role: "Sekretaris", photo: heroImgSekre },
 ];
 
-const divisi = [
-  { name: "-", role: "Divisi Humas" },
-  { name: "-", role: "Divisi Acara" },
-  { name: "-", role: "Divisi Perlengkapan" },
-  { name: "-", role: "Divisi PDD" },
+const divisi1 = [
+  { name: "-", role: "Bendahara", photo: heroImgBendahara },
+  { name: "-", role: "Divisi Humas", photo: heroImgHumas },
+  { name: "-", role: "Divisi Acara", photo: heroImgAcara1 },
+  { name: "-", role: "Divisi Acara", photo: heroImgAcara2 },
+];
+
+const divisi2 = [
+  { name: "-", role: "Divisi PDD", photo: heroImgPDD1 },
+  { name: "-", role: "Divisi PDD", photo: heroImgPDD2 },
+  { name: "-", role: "Divisi Perlengkapan", photo: heroImgPerkap1 },
+  { name: "-", role: "Divisi Perlengkapan", photo: heroImgPerkap2 },
 ];
 
 const dusun = [
+  "Dusun Serengat",
   "Dusun Rungkang",
-  "Dusun Tunas Harapan",
-  "Dusun Bumi Hijau",
-  "Dusun Cipta Karya",
-  "Dusun Sumber Rejeki",
-  "Dusun Wana Asri",
-  "Dusun Tirta Mulya",
+  "Dusun Rungkang Barat",
+  "Dusun Gerami",
+  "Dusun Gerami Timur",
+  "Dusun Dasan Tinggi",
+  "Dusun Dasan Tinggi Utara",
 ];
 
 function TentangKami() {
@@ -63,37 +82,80 @@ function TentangKami() {
         {/* Baris Pengurus */}
         <div className="mx-auto mb-6 grid max-w-4xl gap-4 md:grid-cols-3">
           {pengurus.map((m) => (
-            <div key={m.role} className="rounded-3xl border border-border bg-card p-5 text-center">
-              <div className="mx-auto grid h-20 w-20 place-items-center rounded-full bg-leaf-soft text-2xl font-extrabold text-primary">
-                {m.name
-                  .split(" ")
-                  .map((n) => n[0])
-                  .slice(0, 2)
-                  .join("")}
+            <div key={m.role} className="rounded-3xl border border-border bg-card p-5 text-center transition-all hover:shadow-md">
+              {/* PERUBAHAN: Blok Avatar dengan logika foto/inisial */}
+              <div className="mx-auto flex h-24 w-24 items-center justify-center overflow-hidden rounded-full bg-leaf-soft text-2xl font-extrabold text-primary shadow-sm ring-2 ring-primary/20">
+                {m.photo ? (
+                  <img src={m.photo} alt={`Foto ${m.name}`} className="h-full w-full object-cover" />
+                ) : (
+                  <span>
+                    {m.name !== "-"
+                      ? m.name
+                          .split(" ")
+                          .map((n) => n[0])
+                          .slice(0, 2)
+                          .join("")
+                      : "-"}
+                  </span>
+                )}
               </div>
 
-              <h3 className="mt-4 text-sm font-bold text-foreground">{m.name}</h3>
-
-              <p className="mt-0.5 text-xs text-muted-foreground">{m.role}</p>
+              <h3 className="mt-4 text-base font-bold text-foreground">{m.name}</h3>
+              <p className="mt-1 text-sm text-muted-foreground">{m.role}</p>
             </div>
           ))}
         </div>
 
         {/* Baris Divisi */}
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {divisi.map((m) => (
-            <div key={m.role} className="rounded-3xl border border-border bg-card p-5 text-center">
-              <div className="mx-auto grid h-20 w-20 place-items-center rounded-full bg-leaf-soft text-2xl font-extrabold text-primary">
-                {m.name
-                  .split(" ")
-                  .map((n) => n[0])
-                  .slice(0, 2)
-                  .join("")}
+          {divisi1.map((m) => (
+            <div key={m.role} className="rounded-3xl border border-border bg-card p-5 text-center transition-all hover:shadow-md">
+              {/* PERUBAHAN: Blok Avatar dengan logika foto/inisial */}
+              <div className="mx-auto flex h-20 w-20 items-center justify-center overflow-hidden rounded-full bg-leaf-soft text-xl font-extrabold text-primary shadow-sm ring-2 ring-primary/20">
+                {m.photo ? (
+                  <img src={m.photo} alt={`Foto ${m.name}`} className="h-full w-full object-cover" />
+                ) : (
+                  <span>
+                    {m.name !== "-"
+                      ? m.name
+                          .split(" ")
+                          .map((n) => n[0])
+                          .slice(0, 2)
+                          .join("")
+                      : "-"}
+                  </span>
+                )}
               </div>
 
               <h3 className="mt-4 text-sm font-bold text-foreground">{m.name}</h3>
+              <p className="mt-1 text-xs text-muted-foreground">{m.role}</p>
+            </div>
+          ))}
+        </div>
 
-              <p className="mt-0.5 text-xs text-muted-foreground">{m.role}</p>
+        {/* Baris Divisi */}
+        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {divisi2.map((m) => (
+            <div key={m.role} className="rounded-3xl border border-border bg-card p-5 text-center transition-all hover:shadow-md">
+              {/* PERUBAHAN: Blok Avatar dengan logika foto/inisial */}
+              <div className="mx-auto flex h-20 w-20 items-center justify-center overflow-hidden rounded-full bg-leaf-soft text-xl font-extrabold text-primary shadow-sm ring-2 ring-primary/20">
+                {m.photo ? (
+                  <img src={m.photo} alt={`Foto ${m.name}`} className="h-full w-full object-cover" />
+                ) : (
+                  <span>
+                    {m.name !== "-"
+                      ? m.name
+                          .split(" ")
+                          .map((n) => n[0])
+                          .slice(0, 2)
+                          .join("")
+                      : "-"}
+                  </span>
+                )}
+              </div>
+
+              <h3 className="mt-4 text-sm font-bold text-foreground">{m.name}</h3>
+              <p className="mt-1 text-xs text-muted-foreground">{m.role}</p>
             </div>
           ))}
         </div>
@@ -121,80 +183,17 @@ function TentangKami() {
 
       <section className="mt-16">
         <div className="mb-6 flex items-center gap-3">
-          <Phone className="h-5 w-5 text-primary" />
-          <h2 className="text-2xl font-bold text-foreground">Hubungi Kami</h2>
-        </div>
-        <div className="grid gap-5 md:grid-cols-3">
-          <a
-            href="https://wa.me/6281933039319"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group flex items-center gap-4 rounded-3xl border border-border bg-card p-6 transition hover:-translate-y-1 hover:shadow-lg"
-          >
-            <span className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-primary text-primary-foreground">
-              <Phone className="h-6 w-6" />
-            </span>
-            <div className="min-w-0">
-              <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                Ketua KKN
-              </p>
-              <p className="truncate text-base font-bold text-foreground">+62 819-3303-9319</p>
-              <p className="text-xs text-muted-foreground">Ahmad Fauzi</p>
-            </div>
-          </a>
-
-          <a
-            href="https://www.instagram.com/kkn_desagelora2026?igsh=YzhrbWIzc3o4MTNm"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group flex items-center gap-4 rounded-3xl border border-border bg-card p-6 transition hover:-translate-y-1 hover:shadow-lg"
-          >
-            <span className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-secondary text-secondary-foreground">
-              <Instagram className="h-6 w-6" />
-            </span>
-            <div className="min-w-0">
-              <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                Instagram
-              </p>
-              <p className="truncate text-base font-bold text-foreground">@kknpmdgelora</p>
-              <p className="text-xs text-muted-foreground">Update kegiatan harian</p>
-            </div>
-          </a>
-
-          <a
-            href="https://www.tiktok.com/@kkn.desa.gelora_p?is_from_webapp=1&sender_device=pc"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group flex items-center gap-4 rounded-3xl border border-border bg-card p-6 transition hover:-translate-y-1 hover:shadow-lg"
-          >
-            <span className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-foreground text-background">
-              <svg viewBox="0 0 24 24" fill="currentColor" className="h-6 w-6" aria-hidden="true">
-                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43V8.4a8.16 8.16 0 0 0 4.77 1.52V6.47a4.85 4.85 0 0 1-1.84-.22z" />
-              </svg>
-            </span>
-            <div className="min-w-0">
-              <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                TikTok
-              </p>
-              <p className="truncate text-base font-bold text-foreground">@kknpmdgelora</p>
-              <p className="text-xs text-muted-foreground">Video edukasi & dokumentasi</p>
-            </div>
-          </a>
-        </div>
-      </section>
-
-      <section className="mt-16">
-        <div className="mb-6 flex items-center gap-3">
           <MapPin className="h-5 w-5 text-primary" />
           <h2 className="text-2xl font-bold text-foreground">Profil Desa Gelora</h2>
         </div>
+
+        {/* 1. Bagian Atas: Teks & Daftar Dusun */}
         <div className="rounded-3xl bg-card p-7 ring-1 ring-border">
-          <p className="text-foreground/85">
-            Desa Gelora terdiri dari <strong>7 dusun</strong> dengan karakter demografis yang
-            beragam — dari pemukiman padat hingga area pertanian dan kerajinan bambu. Setiap dusun
-            memiliki titik komposter komunal yang dikelola bersama warga.
+          <p className="leading-relaxed text-foreground/85">
+            Desa Gelora berlokasi di Kecamatan Sikur, Kabupaten Lombok Timur, Nusa Tenggara Barat.
+            Selain mengandalkan sektor pertanian, roda ekonomi masyarakat juga digerakkan oleh usaha kreatif lokal, salah satunya adalah produksi batu bata. Secara administratif, desa ini terdiri dari 7 dusun yaitu:
           </p>
-          <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+          <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {dusun.map((d) => (
               <div
                 key={d}
@@ -205,6 +204,13 @@ function TentangKami() {
             ))}
           </div>
         </div>
+
+        {/* 2. Bagian Bawah: Peta Full Width Menggunakan React-Leaflet */}
+        {/* Tambahkan properti z-0 agar peta tidak menutupi navbar saat di-scroll */}
+        <div className="mt-6 relative h-[450px] w-full overflow-hidden rounded-3xl bg-muted ring-1 ring-border shadow-sm z-0">
+          <MapDesa />
+        </div>
+
       </section>
     </div>
   );

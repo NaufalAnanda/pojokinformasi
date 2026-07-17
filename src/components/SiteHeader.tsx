@@ -4,7 +4,7 @@ import { useState } from "react";
 import logo from "@/assets/logo.jpg";
 
 const navItems = [
-  { to: "/", label: "Home", icon: Home, exact: true },
+  { to: "/", label: "Links", exact: true },
   { to: "/beranda", label: "Beranda", exact: false },
   { to: "/program-kerja", label: "Program Kerja", exact: false },
   { to: "/edukasi", label: "Pusat Edukasi", exact: false },

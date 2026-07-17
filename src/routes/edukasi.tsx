@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   Info,
   Trash2,
@@ -26,18 +26,54 @@ export const Route = createFileRoute("/edukasi")({
 });
 
 const grids = [
-  { icon: Info, title: "Tentang Program KKN PMD", desc: "Latar belakang & visi program." },
-  { icon: Trash2, title: "Jenis-Jenis Sampah", desc: "Organik, Anorganik, dan B3." },
-  { icon: Clock, title: "Waktu Penguraian Sampah", desc: "Infografis durasi terurainya sampah." },
-  { icon: Filter, title: "Cara Pemilahan Sampah", desc: "Panduan praktis pemilahan di rumah." },
+  { 
+    icon: Info, 
+    title: "Tentang Program KKN PMD", 
+    desc: "Latar belakang & visi program.", 
+    to: "/edukasi/tentang" 
+  },
+  { 
+    icon: Trash2, 
+    title: "Jenis-Jenis Sampah", 
+    desc: "Organik, Anorganik, dan B3.", 
+    to: "/edukasi/jenis-sampah" 
+  },
+  { 
+    icon: Clock, 
+    title: "Waktu Penguraian Sampah", 
+    desc: "Infografis durasi terurainya sampah.", 
+    to: "/edukasi/waktu-penguraian" 
+  },
+  { 
+    icon: Filter, 
+    title: "Cara Pemilahan Sampah", 
+    desc: "Panduan praktis pemilahan di rumah.", 
+    to: "/edukasi/cara-pemilahan" 
+  },
   {
     icon: Recycle,
     title: "Cara Menggunakan Tong Komposter",
     desc: "Langkah pengoperasian komposter.",
+    to: "/edukasi/panduan-komposter",
   },
-  { icon: Video, title: "Video Edukasi", desc: "Tutorial visual untuk warga." },
-  { icon: Images, title: "Dokumentasi Kegiatan", desc: "Galeri praktik lapangan." },
-  { icon: Download, title: "Unduh Poster Edukasi", desc: "Materi siap cetak untuk dusun." },
+  { 
+    icon: Video, 
+    title: "Video Edukasi", 
+    desc: "Tutorial visual untuk warga.", 
+    to: "/edukasi/video" // <-- Ini akan membuka file edukasi.video.tsx
+  },
+  { 
+    icon: Images, 
+    title: "Dokumentasi Kegiatan", 
+    desc: "Galeri praktik lapangan.", 
+    to: "/beranda" // Sementara dikembalikan ke beranda
+  },
+  { 
+    icon: Download, 
+    title: "Unduh Poster Edukasi", 
+    desc: "Materi siap cetak untuk dusun.", 
+    to: "/edukasi/poster" 
+  },
 ];
 
 function Edukasi() {
@@ -52,16 +88,16 @@ function Edukasi() {
             Pusat Edukasi Ekonomi Hijau.
           </h1>
           <p className="mt-2 text-muted-foreground">
-            Delapan modul edukasi — pilih topik, langsung baca. Tanpa scroll panjang.
+            Delapan modul edukasi — pilih topik, langsung baca.
           </p>
         </div>
       </header>
 
       <div className="mt-10 grid grid-cols-2 gap-4 sm:gap-5 md:grid-cols-3 lg:grid-cols-4">
         {grids.map((g, i) => (
-          <button
+          <Link
             key={g.title}
-            type="button"
+            to={g.to} 
             className="group flex flex-col rounded-3xl border border-border bg-card p-5 text-left transition hover:-translate-y-1 hover:border-primary hover:shadow-md"
           >
             <div className="flex items-center justify-between">
@@ -72,7 +108,7 @@ function Edukasi() {
             </div>
             <h3 className="mt-4 text-base font-bold leading-snug text-foreground">{g.title}</h3>
             <p className="mt-1 text-xs text-muted-foreground">{g.desc}</p>
-          </button>
+          </Link>
         ))}
       </div>
     </div>

@@ -17,6 +17,16 @@ export const Route = createFileRoute("/")({
 
 const menuItems = [
   {
+    id: "proker",
+    label: "Program Kerja",
+    sublabel: "Lihat seluruh program KKN kami",
+    icon: Briefcase,
+    to: "/beranda",
+    external: false,
+    color: "bg-primary",
+    textColor: "text-primary-foreground",
+  },
+  {
     id: "wa",
     label: "WhatsApp",
     sublabel: "Hubungi kami via WhatsApp",
@@ -46,16 +56,6 @@ const menuItems = [
     color: "bg-black",
     textColor: "text-white",
   },
-  {
-    id: "proker",
-    label: "Program Kerja",
-    sublabel: "Lihat seluruh program KKN kami",
-    icon: Briefcase,
-    to: "/beranda",
-    external: false,
-    color: "bg-primary",
-    textColor: "text-primary-foreground",
-  },
 ];
 
 function Splash() {
@@ -71,7 +71,11 @@ function Splash() {
           className="h-24 w-24 rounded-full object-cover shadow-[0_0_15px_rgba(0,0,0,0.4)]"
         />
         <div>
-          <h1 className="text-2xl font-extrabold tracking-tight text-foreground sm:text-3xl">
+          <h1 className="text-3xl font-extrabold tracking-tight text-green-700 sm:text-3xl">
+            SI-Komp
+          </h1>
+          <br></br>
+          <h1 className="text-2xl font-bold tracking-tight text-black-800 sm:text-3xl">
             KKN PMD Desa Gelora
           </h1>
           <p className="mt-1 text-sm font-semibold text-primary">2026</p>

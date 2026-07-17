@@ -122,7 +122,9 @@ function RootShell({ children }: { children: ReactNode }) {
   );
 }
 
-import { SiteHeader, SiteFooter } from "../components/SiteHeader";
+// PERUBAHAN DI SINI: Menghapus SiteFooter yang lama dan memanggil Footer yang baru
+import { SiteHeader } from "../components/SiteHeader";
+import { Footer } from "../components/Footer";
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
@@ -136,7 +138,10 @@ function RootComponent() {
         <main className="flex-1">
           <Outlet />
         </main>
-        {!isSplash && <SiteFooter />}
+        
+        {/* Footer dipanggil secara langsung agar muncul di seluruh halaman, termasuk "Home" */}
+        <Footer />
+        
       </div>
     </QueryClientProvider>
   );

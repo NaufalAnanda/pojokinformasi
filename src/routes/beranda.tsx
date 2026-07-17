@@ -1,145 +1,173 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Recycle, Boxes, Sprout, BookOpen, Calendar, Leaf } from "lucide-react";
-import heroImg from "@/assets/hero-komposter.jpg";
+import { ArrowRight } from "lucide-react";
+import Autoplay from "embla-carousel-autoplay";
+
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
+
+import heroImg from "@/assets/dpk.jpg";
+import heroImg2 from "@/assets/sekdes.jpg";
+import heroImg3 from "@/assets/posyandu.jpg";
+import heroImg4 from "@/assets/penerimaan.jpg";
 
 export const Route = createFileRoute("/beranda")({
   head: () => ({
     meta: [
-      { title: "Beranda — KKN PMD Desa Gelora 2026" },
-      {
-        name: "description",
-        content:
-          "Kampanye Ekonomi Hijau Desa Gelora: dampak komposter komunal, edukasi, dan ekonomi sirkular.",
-      },
+      { title: "Beranda — Program KKN Desa Gelora" },
     ],
   }),
   component: Beranda,
 });
 
-const metrics = [
-  { label: "Volume Sampah Terolah", value: "1.248", unit: "Kg", icon: Recycle },
-  { label: "Tong Komposter Aktif", value: "24", unit: "Unit", icon: Boxes },
-  { label: "Pupuk Kompos Dihasilkan", value: "312", unit: "Kg", icon: Sprout },
-];
-
-const shortcuts = [
-  {
-    to: "/program-kerja" as const,
-    title: "Program Kerja",
-    desc: "Tiga pilar utama: infrastruktur komposter, SI-Komp, dan ekonomi sirkular.",
-    icon: Boxes,
-  },
-  {
-    to: "/edukasi" as const,
-    title: "Pusat Edukasi",
-    desc: "8 modul edukasi pemilahan sampah dan panduan komposter — akses 24 jam.",
-    icon: BookOpen,
-  },
-  {
-    to: "/tentang-kami" as const,
-    title: "Tentang Kami",
-    desc: "Profil kelompok KKN PMD, sambutan, dan profil 7 dusun Desa Gelora.",
-    icon: Calendar,
-  },
-];
-
 function Beranda() {
   return (
-    <div>
-      <section className="relative overflow-hidden">
-        <div className="mx-auto grid max-w-7xl gap-10 px-5 pt-10 pb-14 md:grid-cols-2 md:items-center md:pt-16 md:pb-20">
-          <div>
-            <span className="inline-flex items-center gap-2 rounded-full bg-leaf-soft px-4 py-1.5 text-xs font-semibold text-primary">
-              <Leaf className="h-3.5 w-3.5" /> Kampanye Ekonomi Hijau
-            </span>
-            <h1 className="mt-5 text-4xl font-extrabold leading-tight text-foreground sm:text-5xl md:text-6xl">
-              Ubah Sampah, <span className="text-primary">Menjadi Peluang</span> Bagi Desa.
-            </h1>
-            <p className="mt-5 text-base text-muted-foreground sm:text-lg">
-              Program KKN PMD Desa Gelora mengajak masyarakat mengolah sampah organik menjadi kompos
-              bernilai guna, mendukung lingkungan yang lebih bersih sekaligus meningkatkan ekonomi
-              desa secara berkelanjutan.
-            </p>
-            <div className="mt-7 flex flex-wrap gap-3">
-              <Link
-                to="/program-kerja"
-                className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-md transition hover:opacity-90"
-              >
-                Lihat Program Kerja <ArrowRight className="h-4 w-4" />
-              </Link>
-              <Link
-                to="/edukasi"
-                className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground transition hover:bg-leaf-soft"
-              >
-                Pusat Edukasi
-              </Link>
-            </div>
-          </div>
+    <div className="mx-auto max-w-6xl px-4 py-10 md:py-16 flex flex-col gap-12 md:gap-12">
 
-          <div className="relative">
-            <div className="absolute -inset-4 -z-10 rounded-[2.5rem] bg-gradient-to-br from-leaf-soft to-accent/40 blur-2xl" />
-            <img
-              src={heroImg}
-              alt="Warga Desa Gelora mengelola komposter komunal"
-              width={1536}
-              height={1024}
-              className="aspect-[4/3] w-full rounded-[2rem] object-cover shadow-xl ring-1 ring-border"
-            />
-          </div>
-        </div>
-      </section>
+      {/* 1. JUDUL UTAMA */}
+      <div className="text-center">
+        <h1 className="text-3xl font-extrabold text-foreground md:text-4xl lg:text-5xl">
+          Ubah Sampah Menjadi Peluang
+        </h1>
+        <p className="mt-3 text-base text-muted-foreground md:text-lg">
+          Program KKN PMD Desa Gelora mengajak masyarakat mengolah sampah organik menjadi kompos bernilai guna
+        </p>
+      </div>
 
-      <section className="mx-auto max-w-7xl px-5">
-        <div className="rounded-3xl bg-card p-6 shadow-sm ring-1 ring-border sm:p-8">
-          <div className="mb-5 flex items-center justify-between">
-            <h2 className="text-lg font-bold text-foreground sm:text-xl">Dampak Program (Live)</h2>
-            <span className="flex items-center gap-1.5 text-xs text-muted-foreground">
-              <span className="h-2 w-2 animate-pulse rounded-full bg-primary" /> diperbarui mingguan
-            </span>
-          </div>
-          <div className="grid gap-4 sm:grid-cols-3">
-            {metrics.map((m) => (
-              <div key={m.label} className="rounded-2xl bg-leaf-soft/60 p-5">
-                <div className="flex items-center gap-3">
-                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-primary text-primary-foreground">
-                    <m.icon className="h-5 w-5" />
-                  </span>
-                  <p className="text-sm font-medium text-foreground/80">{m.label}</p>
-                </div>
-                <div className="mt-4 flex items-baseline gap-1.5">
-                  <span className="text-4xl font-extrabold text-foreground">{m.value}</span>
-                  <span className="text-sm font-semibold text-muted-foreground">{m.unit}</span>
+      {/* 2. GALERI KEGIATAN (FULL WIDTH) */}
+      <div className="w-full flex flex-col">
+        <Carousel
+          plugins={[
+            Autoplay({
+              delay: 4000, 
+            }),
+          ]}
+          className="w-full overflow-hidden rounded-[2rem] shadow-xl ring-1 ring-border"
+        >
+          <CarouselContent>
+            {/* Foto 1 */}
+            <CarouselItem>
+              {/* Rasio diubah: 4:3 untuk HP, 21:9 (panoramik) untuk Desktop */}
+              <div className="relative aspect-[4/3] md:aspect-[21/9] w-full">
+                <img
+                  src={heroImg}
+                  alt="Foto bersama DPK"
+                  className="h-full w-full object-cover"
+                />
+                <div className="absolute bottom-0 w-full bg-gradient-to-t from-black/90 via-black/50 to-transparent px-5 pb-3 pt-8 text-white md:px-8 md:pb-5 md:pt-12">
+                  {/* <p className="text-1xl font-bold md:text-2xl">Kerja Bakti Komposter</p> */}
+                  <p className="mt-1 text-sm opacity-90 md:text-base">Foto bersama DPK</p>
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
+            </CarouselItem>
 
-      <section className="mx-auto max-w-7xl px-5 py-14">
-        <div className="mb-8 max-w-2xl">
-          <h2 className="text-2xl font-bold text-foreground sm:text-3xl">Akses Cepat</h2>
-          <p className="mt-2 text-muted-foreground">Jelajahi tiga area utama platform kami.</p>
+            {/* Foto 2 - Placeholder */}
+            <CarouselItem>
+              <div className="relative aspect-[4/3] md:aspect-[21/9] w-full bg-blue-500">
+                <div className="flex h-full w-full items-center justify-center font-semibold text-white">
+                  <img
+                  src={heroImg2}
+                  alt="Kunjungan Hari Pertama"
+                  className="h-full w-full object-cover"
+                />
+                </div>
+                <div className="absolute bottom-0 w-full bg-gradient-to-t from-black/90 via-black/50 to-transparent px-6 pb-6 pt-16 text-white md:px-10 md:pb-10">
+                  {/* <p className="text-2xl font-bold md:text-3xl">Kunjungan Hari Pertama</p> */}
+                  <p className="mt-1 text-sm opacity-90 md:text-base">Kunjungan Hari Pertama</p>
+                </div>
+              </div>
+            </CarouselItem>
+
+            {/* Foto 3 - Placeholder */}
+            <CarouselItem>
+              <div className="relative aspect-[4/3] md:aspect-[21/9] w-full bg-green-500">
+                <div className="flex h-full w-full items-center justify-center font-semibold text-white">
+                  <img
+                  src={heroImg3}
+                  alt="Kegiatan Posyandu"
+                  className="h-full w-full object-cover"
+                />
+                </div>
+                <div className="absolute bottom-0 w-full bg-gradient-to-t from-black/90 via-black/50 to-transparent px-6 pb-6 pt-16 text-white md:px-10 md:pb-10">
+                  {/* <p className="text-2xl font-bold md:text-3xl">Kegiatan Posyandu Mawar</p> */}
+                  <p className="mt-1 text-sm opacity-90 md:text-base">Kegiatan Posyandu</p>
+                </div>
+              </div>
+            </CarouselItem>
+
+            {/* Foto 4 - Placeholder */}
+            <CarouselItem>
+              <div className="relative aspect-[4/3] md:aspect-[21/9] w-full bg-green-500">
+                <div className="flex h-full w-full items-center justify-center font-semibold text-white">
+                  <img
+                  src={heroImg4}
+                  alt="Kegiatan Kantor Desa"
+                  className="h-full w-full object-cover"
+                />
+                </div>
+                <div className="absolute bottom-0 w-full bg-gradient-to-t from-black/90 via-black/50 to-transparent px-6 pb-6 pt-16 text-white md:px-10 md:pb-10">
+                  {/* <p className="text-2xl font-bold md:text-3xl">Piket Kantor Desa</p> */}
+                  <p className="mt-1 text-sm opacity-90 md:text-base">Penerimaan di Kantor Desa</p>
+                </div>
+              </div>
+            </CarouselItem>
+          </CarouselContent>
+        </Carousel>
+      </div>
+
+      {/* 3. MENU PILIHAN (3 KOLOM HORIZONTAL DI DESKTOP) */}
+      <div className="w-full flex flex-col">
+        <h2 className="mb-6 text-center text-2xl font-bold text-foreground md:text-3xl">
+          Menu Pilihan
+        </h2>
+        
+        {/* Perubahan utama: md:grid-cols-3 akan menyejajarkan menu secara horizontal di layar besar */}
+        <div className="grid w-full gap-4 md:grid-cols-3 md:gap-6">
+          
+          <Link
+            to="/program-kerja"
+            className="group flex flex-row items-center justify-between rounded-[2rem] bg-[#C1A88D]/30 p-6 transition-all hover:bg-[#C1A88D]/50 hover:shadow-md active:scale-95"
+          >
+            <div>
+              <h3 className="text-xl font-bold text-foreground">Program Kompos</h3>
+              <p className="mt-1 text-sm text-muted-foreground">Cara mengolah sampah dapur</p>
+            </div>
+            <div className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-background shadow-sm transition group-hover:scale-110 group-hover:text-primary">
+              <ArrowRight className="h-6 w-6" />
+            </div>
+          </Link>
+
+          <Link
+            to="/edukasi"
+            className="group flex flex-row items-center justify-between rounded-[2rem] bg-[#C1A88D]/30 p-6 transition-all hover:bg-[#C1A88D]/50 hover:shadow-md active:scale-95"
+          >
+            <div>
+              <h3 className="text-xl font-bold text-foreground">Panduan </h3>
+              <p className="mt-1 text-sm text-muted-foreground">Panduan pembuatan kompos </p>
+            </div>
+            <div className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-background shadow-sm transition group-hover:scale-110 group-hover:text-primary">
+              <ArrowRight className="h-6 w-6" />
+            </div>
+          </Link>
+
+          <Link
+            to="/tentang-kami"
+            className="group flex flex-row items-center justify-between rounded-[2rem] bg-[#C1A88D]/30 p-6 transition-all hover:bg-[#C1A88D]/50 hover:shadow-md active:scale-95"
+          >
+            <div>
+              <h3 className="text-xl font-bold text-foreground">Tentang Kami</h3>
+              <p className="mt-1 text-sm text-muted-foreground">Profil mahasiswa KKN</p>
+            </div>
+            <div className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-background shadow-sm transition group-hover:scale-110 group-hover:text-primary">
+              <ArrowRight className="h-6 w-6" />
+            </div>
+          </Link>
+
         </div>
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {shortcuts.map((s) => (
-            <Link
-              key={s.to}
-              to={s.to}
-              className="group rounded-3xl border border-border bg-card p-6 transition hover:-translate-y-1 hover:border-primary hover:shadow-lg"
-            >
-              <span className="grid h-12 w-12 place-items-center rounded-2xl bg-secondary text-secondary-foreground">
-                <s.icon className="h-6 w-6" />
-              </span>
-              <h3 className="mt-5 text-xl font-bold text-foreground">{s.title}</h3>
-              <p className="mt-2 text-sm text-muted-foreground">{s.desc}</p>
-              <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
-                Buka halaman <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
-              </span>
-            </Link>
-          ))}
-        </div>
-      </section>
+      </div>
+
     </div>
   );
 }

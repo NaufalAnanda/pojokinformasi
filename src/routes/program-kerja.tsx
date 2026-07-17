@@ -1,8 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
+import { Newspaper, ExternalLink } from "lucide-react";
 import program1 from "@/assets/program-1.jpg";
 import program2 from "@/assets/program-2.jpg";
 import program3 from "@/assets/program-3.jpg";
+import program4 from "@/assets/cfd.jpg";
+import program5 from "@/assets/mengajar.jpg";
 
 export const Route = createFileRoute("/program-kerja")({
   head: () => ({
@@ -21,24 +24,38 @@ export const Route = createFileRoute("/program-kerja")({
 const cards = [
   {
     image: program1,
-    tag: "Pilar 1",
+    tag: "Program 1",
     title: "Tong Komposter Sederhana",
     desc: "Mengelola sampah organik menjadi kompos secara mudah dan ramah lingkngan.",
-    cta: "Detail Perakitan",
+    cta: "Detail Program",
   },
   {
     image: program2,
-    tag: "Pilar 2",
+    tag: "Program 2",
     title: "SI-Komp (Sistem Informasi Sampah Terurai)",
     desc: "Digitalisasi panduan komposter via web-app yang diakses melalui stiker QR di pojok informasi.",
-    cta: "Coba Akses SI-Komp",
+    cta: "Detail Program",
   },
   {
     image: program3,
-    tag: "Pilar 3",
+    tag: "Program 3",
     title: "Daur Ulang Kreatif",
     desc: "Mengubah sampah menjadi barang bernilai guna dan estetis secara kreatif",
-    cta: "Lihat Hasil Panen",
+    cta: "Detail Program",
+  },
+  {
+    image: program4,
+    tag: "Program 4",
+    title: "Car Free Day",
+    desc: "Car Free Day di Desa Gelora",
+    cta: "Detail Program",
+  },
+  {
+    image: program5,
+    tag: "Program 4",
+    title: "Mengajar Anak SD",
+    desc: "Mengajarkan mata pelajaran bahasa inggris dan matematika",
+    cta: "Detail Program",
   },
 ];
 
@@ -50,7 +67,7 @@ function ProgramKerja() {
           Program Kerja
         </span>
         <h1 className="mt-4 text-4xl font-extrabold text-foreground sm:text-5xl">
-          Tiga Pilar Ekonomi Hijau Desa Gelora.
+          Program Kerja KKN PMD Desa Gelora 2026.
         </h1>
         <p className="mt-4 text-muted-foreground sm:text-lg">
           Setiap pilar saling melengkapi: infrastruktur fisik, edukasi digital, dan sirkulasi

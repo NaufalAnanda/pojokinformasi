@@ -14,6 +14,7 @@ import { Route as ProgramKerjaRouteImport } from './routes/program-kerja'
 import { Route as EdukasiRouteImport } from './routes/edukasi'
 import { Route as BerandaRouteImport } from './routes/beranda'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as EdukasiVideoRouteImport } from './routes/edukasi_.video'
 
 const TentangKamiRoute = TentangKamiRouteImport.update({
   id: '/tentang-kami',
@@ -40,6 +41,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EdukasiVideoRoute = EdukasiVideoRouteImport.update({
+  id: '/edukasi_/video',
+  path: '/edukasi/video',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -47,6 +53,7 @@ export interface FileRoutesByFullPath {
   '/edukasi': typeof EdukasiRoute
   '/program-kerja': typeof ProgramKerjaRoute
   '/tentang-kami': typeof TentangKamiRoute
+  '/edukasi/video': typeof EdukasiVideoRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -54,6 +61,7 @@ export interface FileRoutesByTo {
   '/edukasi': typeof EdukasiRoute
   '/program-kerja': typeof ProgramKerjaRoute
   '/tentang-kami': typeof TentangKamiRoute
+  '/edukasi/video': typeof EdukasiVideoRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -62,12 +70,25 @@ export interface FileRoutesById {
   '/edukasi': typeof EdukasiRoute
   '/program-kerja': typeof ProgramKerjaRoute
   '/tentang-kami': typeof TentangKamiRoute
+  '/edukasi_/video': typeof EdukasiVideoRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/beranda' | '/edukasi' | '/program-kerja' | '/tentang-kami'
+  fullPaths:
+    | '/'
+    | '/beranda'
+    | '/edukasi'
+    | '/program-kerja'
+    | '/tentang-kami'
+    | '/edukasi/video'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/beranda' | '/edukasi' | '/program-kerja' | '/tentang-kami'
+  to:
+    | '/'
+    | '/beranda'
+    | '/edukasi'
+    | '/program-kerja'
+    | '/tentang-kami'
+    | '/edukasi/video'
   id:
     | '__root__'
     | '/'
@@ -75,6 +96,7 @@ export interface FileRouteTypes {
     | '/edukasi'
     | '/program-kerja'
     | '/tentang-kami'
+    | '/edukasi_/video'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -83,6 +105,7 @@ export interface RootRouteChildren {
   EdukasiRoute: typeof EdukasiRoute
   ProgramKerjaRoute: typeof ProgramKerjaRoute
   TentangKamiRoute: typeof TentangKamiRoute
+  EdukasiVideoRoute: typeof EdukasiVideoRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -122,6 +145,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/edukasi_/video': {
+      id: '/edukasi_/video'
+      path: '/edukasi/video'
+      fullPath: '/edukasi/video'
+      preLoaderRoute: typeof EdukasiVideoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -131,6 +161,7 @@ const rootRouteChildren: RootRouteChildren = {
   EdukasiRoute: EdukasiRoute,
   ProgramKerjaRoute: ProgramKerjaRoute,
   TentangKamiRoute: TentangKamiRoute,
+  EdukasiVideoRoute: EdukasiVideoRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
