@@ -12,6 +12,7 @@ import heroImg from "@/assets/dpk.jpg";
 import heroImg2 from "@/assets/sekdes.jpg";
 import heroImg3 from "@/assets/posyandu.jpg";
 import heroImg4 from "@/assets/penerimaan.jpg";
+import heroImg5 from "@/assets/sosialisasi.jpg";
 
 export const Route = createFileRoute("/beranda")({
   head: () => ({
@@ -113,6 +114,22 @@ function Beranda() {
                 </div>
               </div>
             </CarouselItem>
+            {/* Foto 5 - Placeholder */}
+            <CarouselItem>
+              <div className="relative aspect-[4/3] md:aspect-[21/9] w-full bg-green-500">
+                <div className="flex h-full w-full items-center justify-center font-semibold text-white">
+                  <img
+                  src={heroImg5}
+                  alt="Sosialisasi Tong Komposter"
+                  className="h-full w-full object-cover"
+                />
+                </div>
+                <div className="absolute bottom-0 w-full bg-gradient-to-t from-black/90 via-black/50 to-transparent px-6 pb-6 pt-16 text-white md:px-10 md:pb-10">
+                  {/* <p className="text-2xl font-bold md:text-3xl">Piket Kantor Desa</p> */}
+                  <p className="mt-1 text-sm opacity-90 md:text-base">Sosialisasi Tong Komposter</p>
+                </div>
+              </div>
+            </CarouselItem>
           </CarouselContent>
         </Carousel>
       </div>
@@ -131,7 +148,7 @@ function Beranda() {
             className="group flex flex-row items-center justify-between rounded-[2rem] bg-[#C1A88D]/30 p-6 transition-all hover:bg-[#C1A88D]/50 hover:shadow-md active:scale-95"
           >
             <div>
-              <h3 className="text-xl font-bold text-foreground">Program Kompos</h3>
+              <h3 className="text-xl font-bold text-foreground">Program Kerja</h3>
               <p className="mt-1 text-sm text-muted-foreground">Cara mengolah sampah dapur</p>
             </div>
             <div className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-background shadow-sm transition group-hover:scale-110 group-hover:text-primary">

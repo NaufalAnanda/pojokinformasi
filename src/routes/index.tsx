@@ -83,7 +83,6 @@ function Splash() {
         </div>
       </div>
 
-      {/* Menu list */}
       <div className="w-full max-w-sm space-y-3">
         {menuItems.map((item) =>
           item.external ? (

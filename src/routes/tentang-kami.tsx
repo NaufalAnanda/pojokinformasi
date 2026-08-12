@@ -37,7 +37,7 @@ const divisi1 = [
   { name: "Sisna Fatmasari", role: "Bendahara", photo: heroImgBendahara },
   { name: "I Desak Kadek Dwi Sastrariani", role: "Divisi Humas", photo: heroImgHumas },
   { name: "Kayla Aisha Nugroho", role: "Divisi Acara", photo: heroImgAcara1 },
-  { name: "Muhammada Rizqy Sya'bany", role: "Divisi Acara", photo: heroImgAcara2 },
+  { name: "Muhammad Rizqy Sya'bany", role: "Divisi Acara", photo: heroImgAcara2 },
 ];
 
 const divisi2 = [
@@ -65,11 +65,11 @@ function TentangKami() {
           Tentang Kami
         </span>
         <h1 className="mt-4 text-4xl font-extrabold text-foreground sm:text-5xl">
-          Kelompok KKN PMD Desa Gelora.
+          Kelompok KKN PMD Desa Gelora
         </h1>
         <p className="mt-4 text-muted-foreground sm:text-lg">
           Mahasiswa pengabdian masyarakat yang berkolaborasi dengan warga 7 dusun untuk membangun
-          ekosistem ekonomi hijau berkelanjutan.
+          ekosistem ekonomi hijau berkelanjutan
         </p>
       </header>
 
@@ -162,24 +162,33 @@ function TentangKami() {
       </section>
 
       <section className="mt-16 grid gap-5 md:grid-cols-2">
-        {[
-          { from: "Kepala Desa Gelora", role: "Pemerintah Desa" },
-          { from: "Dosen Pembimbing Lapangan", role: "Universitas Mataram" },
-        ].map((s) => (
-          <article key={s.from} className="rounded-3xl border border-border bg-card p-7">
-            <Quote className="h-8 w-8 text-secondary" />
-            <p className="mt-4 text-base leading-relaxed text-foreground/85">
-              "Program Ekonomi Hijau ini menjadi langkah nyata kolaborasi mahasiswa dan warga Gelora
-              — bukan hanya mengurangi sampah, tetapi menumbuhkan kemandirian ekonomi dari halaman
-              rumah kita sendiri."
-            </p>
-            <div className="mt-5 border-t border-border pt-4">
-              <p className="font-bold text-foreground">{s.from}</p>
-              <p className="text-sm text-muted-foreground">{s.role}</p>
-            </div>
-          </article>
-        ))}
-      </section>
+      {[
+        { 
+          from: "Kepala Desa Gelora", 
+          role: "Pemerintah Desa", 
+          text: "Program Ekonomi Hijau ini menjadi langkah nyata kolaborasi mahasiswa dan warga Gelora, bukan hanya mengurangi sampah, tetapi menumbuhkan kemandirian ekonomi dari halaman rumah kita sendiri" 
+        },
+        { 
+          from: "Dosen Pembimbing Lapangan", 
+          role: "Universitas Mataram", 
+          text: "Inisiatif ini menunjukkan bagaimana mahasiswa dapat berperan aktif mendampingi masyarakat, sehingga tercipta sinergi antara akademisi dan warga untuk membangun desa yang berkelanjutan" 
+        },
+      ].map((s) => (
+        <article 
+          key={s.from} 
+          className="rounded-3xl border border-border bg-card p-7"
+        >
+          <Quote className="h-8 w-8 text-secondary" />
+          <p className="mt-4 text-base leading-relaxed text-foreground/85">
+            "{s.text}"
+          </p>
+          <div className="mt-5 border-t border-border pt-4">
+            <p className="font-bold text-foreground">{s.from}</p>
+            <p className="text-sm text-muted-foreground">{s.role}</p>
+          </div>
+        </article>
+      ))}
+    </section>
 
       <section className="mt-16">
         <div className="mb-6 flex items-center gap-3">
@@ -193,7 +202,7 @@ function TentangKami() {
             Desa Gelora berlokasi di Kecamatan Sikur, Kabupaten Lombok Timur, Nusa Tenggara Barat.
             Selain mengandalkan sektor pertanian, roda ekonomi masyarakat juga digerakkan oleh usaha kreatif lokal, salah satunya adalah produksi batu bata. Secara administratif, desa ini terdiri dari 7 dusun yaitu:
           </p>
-          <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          <div className="mt-6 grid grid-cols-1 gap-3 sm  :grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {dusun.map((d) => (
               <div
                 key={d}

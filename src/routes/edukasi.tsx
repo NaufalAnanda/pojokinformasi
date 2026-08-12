@@ -3,11 +3,7 @@ import {
   Info,
   Trash2,
   Clock,
-  Filter,
-  Recycle,
   Video,
-  Images,
-  Download,
   QrCode,
 } from "lucide-react";
 
@@ -28,51 +24,27 @@ export const Route = createFileRoute("/edukasi")({
 const grids = [
   { 
     icon: Info, 
-    title: "Tentang Program KKN PMD", 
-    desc: "Latar belakang & visi program.", 
-    to: "/edukasi/tentang" 
+    title: "Mengenal Ekonomi Hijau", 
+    desc: "Pentingnya menjaga lingkungan desa.", 
+    to: "/edukasi/ekonomiHijau" 
   },
   { 
     icon: Trash2, 
     title: "Jenis-Jenis Sampah", 
     desc: "Organik, Anorganik, dan B3.", 
-    to: "/edukasi/jenis-sampah" 
+    to: "/edukasi/jenisSampah" 
   },
   { 
     icon: Clock, 
     title: "Waktu Penguraian Sampah", 
     desc: "Infografis durasi terurainya sampah.", 
-    to: "/edukasi/waktu-penguraian" 
-  },
-  { 
-    icon: Filter, 
-    title: "Cara Pemilahan Sampah", 
-    desc: "Panduan praktis pemilahan di rumah.", 
-    to: "/edukasi/cara-pemilahan" 
-  },
-  {
-    icon: Recycle,
-    title: "Cara Menggunakan Tong Komposter",
-    desc: "Langkah pengoperasian komposter.",
-    to: "/edukasi/panduan-komposter",
+    to: "/edukasi/waktuPenguraian" 
   },
   { 
     icon: Video, 
     title: "Video Edukasi", 
     desc: "Tutorial visual untuk warga.", 
-    to: "/edukasi/video" // <-- Ini akan membuka file edukasi.video.tsx
-  },
-  { 
-    icon: Images, 
-    title: "Dokumentasi Kegiatan", 
-    desc: "Galeri praktik lapangan.", 
-    to: "/beranda" // Sementara dikembalikan ke beranda
-  },
-  { 
-    icon: Download, 
-    title: "Unduh Poster Edukasi", 
-    desc: "Materi siap cetak untuk dusun.", 
-    to: "/edukasi/poster" 
+    to: "/edukasi/video" 
   },
 ];
 
@@ -82,13 +54,13 @@ function Edukasi() {
       <header className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div className="max-w-2xl">
           <span className="inline-flex items-center gap-2 rounded-full bg-leaf-soft px-4 py-1.5 text-xs font-semibold text-primary">
-            <QrCode className="h-3.5 w-3.5" /> Scan QR di Tong Komposter
+            <QrCode className="h-3.5 w-3.5" /> Scan QR di Papan Informasi
           </span>
           <h1 className="mt-3 text-3xl font-extrabold text-foreground sm:text-4xl">
             Pusat Edukasi Ekonomi Hijau.
           </h1>
           <p className="mt-2 text-muted-foreground">
-            Delapan modul edukasi — pilih topik, langsung baca.
+            Empat modul edukasi, pilih topik dan langsung pelajari.
           </p>
         </div>
       </header>

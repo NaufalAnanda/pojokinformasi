@@ -14,7 +14,17 @@ import { Route as ProgramKerjaRouteImport } from './routes/program-kerja'
 import { Route as EdukasiRouteImport } from './routes/edukasi'
 import { Route as BerandaRouteImport } from './routes/beranda'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ProgramKerjaTongKomposterRouteImport } from './routes/program-kerja_.tongKomposter'
+import { Route as ProgramKerjaSiKompRouteImport } from './routes/program-kerja_.siKomp'
+import { Route as ProgramKerjaMengajarTKRouteImport } from './routes/program-kerja_.mengajarTK'
+import { Route as ProgramKerjaMengajarSDRouteImport } from './routes/program-kerja_.mengajarSD'
+import { Route as ProgramKerjaLubangTebaRouteImport } from './routes/program-kerja_.lubangTeba'
+import { Route as EdukasiWaktuPenguraianRouteImport } from './routes/edukasi_.waktuPenguraian'
 import { Route as EdukasiVideoRouteImport } from './routes/edukasi_.video'
+import { Route as EdukasiUnduhPosterRouteImport } from './routes/edukasi_.unduhPoster'
+import { Route as EdukasiJenisSampahRouteImport } from './routes/edukasi_.jenisSampah'
+import { Route as EdukasiEkonomiHijauRouteImport } from './routes/edukasi_.ekonomiHijau'
+import { Route as EdukasiCaraKomposterRouteImport } from './routes/edukasi_.caraKomposter'
 
 const TentangKamiRoute = TentangKamiRouteImport.update({
   id: '/tentang-kami',
@@ -41,9 +51,60 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProgramKerjaTongKomposterRoute =
+  ProgramKerjaTongKomposterRouteImport.update({
+    id: '/program-kerja_/tongKomposter',
+    path: '/program-kerja/tongKomposter',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ProgramKerjaSiKompRoute = ProgramKerjaSiKompRouteImport.update({
+  id: '/program-kerja_/siKomp',
+  path: '/program-kerja/siKomp',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProgramKerjaMengajarTKRoute = ProgramKerjaMengajarTKRouteImport.update({
+  id: '/program-kerja_/mengajarTK',
+  path: '/program-kerja/mengajarTK',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProgramKerjaMengajarSDRoute = ProgramKerjaMengajarSDRouteImport.update({
+  id: '/program-kerja_/mengajarSD',
+  path: '/program-kerja/mengajarSD',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProgramKerjaLubangTebaRoute = ProgramKerjaLubangTebaRouteImport.update({
+  id: '/program-kerja_/lubangTeba',
+  path: '/program-kerja/lubangTeba',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EdukasiWaktuPenguraianRoute = EdukasiWaktuPenguraianRouteImport.update({
+  id: '/edukasi_/waktuPenguraian',
+  path: '/edukasi/waktuPenguraian',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const EdukasiVideoRoute = EdukasiVideoRouteImport.update({
   id: '/edukasi_/video',
   path: '/edukasi/video',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EdukasiUnduhPosterRoute = EdukasiUnduhPosterRouteImport.update({
+  id: '/edukasi_/unduhPoster',
+  path: '/edukasi/unduhPoster',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EdukasiJenisSampahRoute = EdukasiJenisSampahRouteImport.update({
+  id: '/edukasi_/jenisSampah',
+  path: '/edukasi/jenisSampah',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EdukasiEkonomiHijauRoute = EdukasiEkonomiHijauRouteImport.update({
+  id: '/edukasi_/ekonomiHijau',
+  path: '/edukasi/ekonomiHijau',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EdukasiCaraKomposterRoute = EdukasiCaraKomposterRouteImport.update({
+  id: '/edukasi_/caraKomposter',
+  path: '/edukasi/caraKomposter',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -53,7 +114,17 @@ export interface FileRoutesByFullPath {
   '/edukasi': typeof EdukasiRoute
   '/program-kerja': typeof ProgramKerjaRoute
   '/tentang-kami': typeof TentangKamiRoute
+  '/edukasi/caraKomposter': typeof EdukasiCaraKomposterRoute
+  '/edukasi/ekonomiHijau': typeof EdukasiEkonomiHijauRoute
+  '/edukasi/jenisSampah': typeof EdukasiJenisSampahRoute
+  '/edukasi/unduhPoster': typeof EdukasiUnduhPosterRoute
   '/edukasi/video': typeof EdukasiVideoRoute
+  '/edukasi/waktuPenguraian': typeof EdukasiWaktuPenguraianRoute
+  '/program-kerja/lubangTeba': typeof ProgramKerjaLubangTebaRoute
+  '/program-kerja/mengajarSD': typeof ProgramKerjaMengajarSDRoute
+  '/program-kerja/mengajarTK': typeof ProgramKerjaMengajarTKRoute
+  '/program-kerja/siKomp': typeof ProgramKerjaSiKompRoute
+  '/program-kerja/tongKomposter': typeof ProgramKerjaTongKomposterRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -61,7 +132,17 @@ export interface FileRoutesByTo {
   '/edukasi': typeof EdukasiRoute
   '/program-kerja': typeof ProgramKerjaRoute
   '/tentang-kami': typeof TentangKamiRoute
+  '/edukasi/caraKomposter': typeof EdukasiCaraKomposterRoute
+  '/edukasi/ekonomiHijau': typeof EdukasiEkonomiHijauRoute
+  '/edukasi/jenisSampah': typeof EdukasiJenisSampahRoute
+  '/edukasi/unduhPoster': typeof EdukasiUnduhPosterRoute
   '/edukasi/video': typeof EdukasiVideoRoute
+  '/edukasi/waktuPenguraian': typeof EdukasiWaktuPenguraianRoute
+  '/program-kerja/lubangTeba': typeof ProgramKerjaLubangTebaRoute
+  '/program-kerja/mengajarSD': typeof ProgramKerjaMengajarSDRoute
+  '/program-kerja/mengajarTK': typeof ProgramKerjaMengajarTKRoute
+  '/program-kerja/siKomp': typeof ProgramKerjaSiKompRoute
+  '/program-kerja/tongKomposter': typeof ProgramKerjaTongKomposterRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -70,7 +151,17 @@ export interface FileRoutesById {
   '/edukasi': typeof EdukasiRoute
   '/program-kerja': typeof ProgramKerjaRoute
   '/tentang-kami': typeof TentangKamiRoute
+  '/edukasi_/caraKomposter': typeof EdukasiCaraKomposterRoute
+  '/edukasi_/ekonomiHijau': typeof EdukasiEkonomiHijauRoute
+  '/edukasi_/jenisSampah': typeof EdukasiJenisSampahRoute
+  '/edukasi_/unduhPoster': typeof EdukasiUnduhPosterRoute
   '/edukasi_/video': typeof EdukasiVideoRoute
+  '/edukasi_/waktuPenguraian': typeof EdukasiWaktuPenguraianRoute
+  '/program-kerja_/lubangTeba': typeof ProgramKerjaLubangTebaRoute
+  '/program-kerja_/mengajarSD': typeof ProgramKerjaMengajarSDRoute
+  '/program-kerja_/mengajarTK': typeof ProgramKerjaMengajarTKRoute
+  '/program-kerja_/siKomp': typeof ProgramKerjaSiKompRoute
+  '/program-kerja_/tongKomposter': typeof ProgramKerjaTongKomposterRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -80,7 +171,17 @@ export interface FileRouteTypes {
     | '/edukasi'
     | '/program-kerja'
     | '/tentang-kami'
+    | '/edukasi/caraKomposter'
+    | '/edukasi/ekonomiHijau'
+    | '/edukasi/jenisSampah'
+    | '/edukasi/unduhPoster'
     | '/edukasi/video'
+    | '/edukasi/waktuPenguraian'
+    | '/program-kerja/lubangTeba'
+    | '/program-kerja/mengajarSD'
+    | '/program-kerja/mengajarTK'
+    | '/program-kerja/siKomp'
+    | '/program-kerja/tongKomposter'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -88,7 +189,17 @@ export interface FileRouteTypes {
     | '/edukasi'
     | '/program-kerja'
     | '/tentang-kami'
+    | '/edukasi/caraKomposter'
+    | '/edukasi/ekonomiHijau'
+    | '/edukasi/jenisSampah'
+    | '/edukasi/unduhPoster'
     | '/edukasi/video'
+    | '/edukasi/waktuPenguraian'
+    | '/program-kerja/lubangTeba'
+    | '/program-kerja/mengajarSD'
+    | '/program-kerja/mengajarTK'
+    | '/program-kerja/siKomp'
+    | '/program-kerja/tongKomposter'
   id:
     | '__root__'
     | '/'
@@ -96,7 +207,17 @@ export interface FileRouteTypes {
     | '/edukasi'
     | '/program-kerja'
     | '/tentang-kami'
+    | '/edukasi_/caraKomposter'
+    | '/edukasi_/ekonomiHijau'
+    | '/edukasi_/jenisSampah'
+    | '/edukasi_/unduhPoster'
     | '/edukasi_/video'
+    | '/edukasi_/waktuPenguraian'
+    | '/program-kerja_/lubangTeba'
+    | '/program-kerja_/mengajarSD'
+    | '/program-kerja_/mengajarTK'
+    | '/program-kerja_/siKomp'
+    | '/program-kerja_/tongKomposter'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -105,7 +226,17 @@ export interface RootRouteChildren {
   EdukasiRoute: typeof EdukasiRoute
   ProgramKerjaRoute: typeof ProgramKerjaRoute
   TentangKamiRoute: typeof TentangKamiRoute
+  EdukasiCaraKomposterRoute: typeof EdukasiCaraKomposterRoute
+  EdukasiEkonomiHijauRoute: typeof EdukasiEkonomiHijauRoute
+  EdukasiJenisSampahRoute: typeof EdukasiJenisSampahRoute
+  EdukasiUnduhPosterRoute: typeof EdukasiUnduhPosterRoute
   EdukasiVideoRoute: typeof EdukasiVideoRoute
+  EdukasiWaktuPenguraianRoute: typeof EdukasiWaktuPenguraianRoute
+  ProgramKerjaLubangTebaRoute: typeof ProgramKerjaLubangTebaRoute
+  ProgramKerjaMengajarSDRoute: typeof ProgramKerjaMengajarSDRoute
+  ProgramKerjaMengajarTKRoute: typeof ProgramKerjaMengajarTKRoute
+  ProgramKerjaSiKompRoute: typeof ProgramKerjaSiKompRoute
+  ProgramKerjaTongKomposterRoute: typeof ProgramKerjaTongKomposterRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -145,11 +276,81 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/program-kerja_/tongKomposter': {
+      id: '/program-kerja_/tongKomposter'
+      path: '/program-kerja/tongKomposter'
+      fullPath: '/program-kerja/tongKomposter'
+      preLoaderRoute: typeof ProgramKerjaTongKomposterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/program-kerja_/siKomp': {
+      id: '/program-kerja_/siKomp'
+      path: '/program-kerja/siKomp'
+      fullPath: '/program-kerja/siKomp'
+      preLoaderRoute: typeof ProgramKerjaSiKompRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/program-kerja_/mengajarTK': {
+      id: '/program-kerja_/mengajarTK'
+      path: '/program-kerja/mengajarTK'
+      fullPath: '/program-kerja/mengajarTK'
+      preLoaderRoute: typeof ProgramKerjaMengajarTKRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/program-kerja_/mengajarSD': {
+      id: '/program-kerja_/mengajarSD'
+      path: '/program-kerja/mengajarSD'
+      fullPath: '/program-kerja/mengajarSD'
+      preLoaderRoute: typeof ProgramKerjaMengajarSDRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/program-kerja_/lubangTeba': {
+      id: '/program-kerja_/lubangTeba'
+      path: '/program-kerja/lubangTeba'
+      fullPath: '/program-kerja/lubangTeba'
+      preLoaderRoute: typeof ProgramKerjaLubangTebaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/edukasi_/waktuPenguraian': {
+      id: '/edukasi_/waktuPenguraian'
+      path: '/edukasi/waktuPenguraian'
+      fullPath: '/edukasi/waktuPenguraian'
+      preLoaderRoute: typeof EdukasiWaktuPenguraianRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/edukasi_/video': {
       id: '/edukasi_/video'
       path: '/edukasi/video'
       fullPath: '/edukasi/video'
       preLoaderRoute: typeof EdukasiVideoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/edukasi_/unduhPoster': {
+      id: '/edukasi_/unduhPoster'
+      path: '/edukasi/unduhPoster'
+      fullPath: '/edukasi/unduhPoster'
+      preLoaderRoute: typeof EdukasiUnduhPosterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/edukasi_/jenisSampah': {
+      id: '/edukasi_/jenisSampah'
+      path: '/edukasi/jenisSampah'
+      fullPath: '/edukasi/jenisSampah'
+      preLoaderRoute: typeof EdukasiJenisSampahRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/edukasi_/ekonomiHijau': {
+      id: '/edukasi_/ekonomiHijau'
+      path: '/edukasi/ekonomiHijau'
+      fullPath: '/edukasi/ekonomiHijau'
+      preLoaderRoute: typeof EdukasiEkonomiHijauRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/edukasi_/caraKomposter': {
+      id: '/edukasi_/caraKomposter'
+      path: '/edukasi/caraKomposter'
+      fullPath: '/edukasi/caraKomposter'
+      preLoaderRoute: typeof EdukasiCaraKomposterRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -161,7 +362,17 @@ const rootRouteChildren: RootRouteChildren = {
   EdukasiRoute: EdukasiRoute,
   ProgramKerjaRoute: ProgramKerjaRoute,
   TentangKamiRoute: TentangKamiRoute,
+  EdukasiCaraKomposterRoute: EdukasiCaraKomposterRoute,
+  EdukasiEkonomiHijauRoute: EdukasiEkonomiHijauRoute,
+  EdukasiJenisSampahRoute: EdukasiJenisSampahRoute,
+  EdukasiUnduhPosterRoute: EdukasiUnduhPosterRoute,
   EdukasiVideoRoute: EdukasiVideoRoute,
+  EdukasiWaktuPenguraianRoute: EdukasiWaktuPenguraianRoute,
+  ProgramKerjaLubangTebaRoute: ProgramKerjaLubangTebaRoute,
+  ProgramKerjaMengajarSDRoute: ProgramKerjaMengajarSDRoute,
+  ProgramKerjaMengajarTKRoute: ProgramKerjaMengajarTKRoute,
+  ProgramKerjaSiKompRoute: ProgramKerjaSiKompRoute,
+  ProgramKerjaTongKomposterRoute: ProgramKerjaTongKomposterRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
