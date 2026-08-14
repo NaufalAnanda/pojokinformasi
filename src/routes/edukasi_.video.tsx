@@ -9,27 +9,14 @@ export const Route = createFileRoute("/edukasi_/video")({
 });
 
 const daftarVideo = [
+  
   {
     id: 1,
-    judul: "Cara Memilah Sampah Dapur",
-    deskripsi: "Panduan memisahkan sampah organik dan anorganik dari rumah.",
-    thumbnail: "https://img.youtube.com/vi/0qfGNQ499JA/hqdefault.jpg", 
-    urlYoutube: "https://youtu.be/0qfGNQ499JA?si=dR1K6bC5HzpJnClo",
-  },
-  {
-    id: 2,
     judul: "Tutorial Menggunakan Tong Komposter",
     deskripsi: "Langkah-langkah mencampur daun kering dan sisa sayur.",
-    thumbnail: "https://img.youtube.com/vi/6RRojjnLJko/hqdefault.jpg",
-    urlYoutube: "https://youtu.be/6RRojjnLJko?si=1Zgpy3wqe0B5DlYE",
+    thumbnail: "https://img.youtube.com/vi/A_TxOGjmq90/hqdefault.jpg",
+    urlYoutube: "https://youtu.be/A_TxOGjmq90",
   },
-  {
-    id: 3,
-    judul: "Manfaat Pupuk Kompos untuk Tanaman",
-    deskripsi: "Melihat hasil nyata penggunaan kompos pada tanaman pekarangan.",
-    thumbnail: "https://img.youtube.com/vi/_acH-EorKIU/hqdefault.jpg",
-    urlYoutube: "https://youtu.be/_acH-EorKIU?si=zm7CPzrUU6PCU2ej",
-  }
 ];
 
 function VideoEdukasi() {

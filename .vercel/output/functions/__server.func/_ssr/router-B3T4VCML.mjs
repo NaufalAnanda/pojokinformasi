@@ -320,7 +320,7 @@ const Route$c = createFileRoute("/beranda")({
   }),
   component: lazyRouteComponent($$splitComponentImporter$c, "component")
 });
-const $$splitComponentImporter$b = () => import("./index-BhjsLd4h.mjs");
+const $$splitComponentImporter$b = () => import("./index-CPsP3YdS.mjs");
 const Route$b = createFileRoute("/")({
   head: () => ({
     meta: [{
@@ -356,7 +356,7 @@ const $$splitComponentImporter$5 = () => import("./edukasi_.waktuPenguraian-BWmo
 const Route$5 = createFileRoute("/edukasi_/waktuPenguraian")({
   component: lazyRouteComponent($$splitComponentImporter$5, "component")
 });
-const $$splitComponentImporter$4 = () => import("./edukasi_.video-4L895rtl.mjs");
+const $$splitComponentImporter$4 = () => import("./edukasi_.video-_VfIgxP0.mjs");
 const Route$4 = createFileRoute("/edukasi_/video")({
   // head: () => ({
   //   meta: [{ title: "Galeri Video Edukasi — KKN PMD Gelora" }],
