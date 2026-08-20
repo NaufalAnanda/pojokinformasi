@@ -12,8 +12,15 @@ const daftarVideo = [
   
   {
     id: 1,
-    judul: "Tutorial Menggunakan Tong Komposter",
-    deskripsi: "Langkah-langkah mencampur daun kering dan sisa sayur.",
+    judul: "Cara Membuat dan Menggunakan Tong Komposter",
+    deskripsi: "Langkah-langkah Pembuatan dan Penggunaan Tong Komposter",
+    thumbnail: "https://img.youtube.com/vi/kKN0D_1ZlmE/hqdefault.jpg",
+    urlYoutube: "https://youtu.be/kKN0D_1ZlmE?si=DFITlifvSUhmm2Uw",
+  },
+  {
+    id: 2,
+    judul: "Pembuatan Lubang Teba ",
+    deskripsi: "Langkah-langkah Membuat Lubang Teba",
     thumbnail: "https://img.youtube.com/vi/A_TxOGjmq90/hqdefault.jpg",
     urlYoutube: "https://youtu.be/A_TxOGjmq90",
   },
